@@ -1,0 +1,6 @@
+{
+ "model": "llama2",
+ "release": "c5e2f18d913bd18b09b9357159543487beb2ce75",
+ "extras": "identical",
+ "bank": "identical"
+}

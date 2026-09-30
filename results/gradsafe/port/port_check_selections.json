@@ -1,0 +1,9 @@
+{
+ "max_ref_abs_diff": 0.0,
+ "critical_counts_equal": true,
+ "critical_selections_identical": true,
+ "max_cosine_gap_abs_diff": 0.0,
+ "n_selected": 200511,
+ "n_params": 224,
+ "passed": true
+}

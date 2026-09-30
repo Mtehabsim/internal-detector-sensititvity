@@ -1,0 +1,280 @@
+{
+ "design": "paper/PREREG_20260926_extensions.md, section A",
+ "n_sets": 30,
+ "B": 2000,
+ "seed": 20260926,
+ "mean_auroc": {
+  "min": 0.8477426276076144,
+  "median": 0.9312456607476409,
+  "max": 0.9408476417517996
+ },
+ "saa_auroc": {
+  "min": 0.838652,
+  "median": 0.94313,
+  "max": 0.9593879999999999
+ },
+ "saa_tpr": {
+  "min": 0.012,
+  "median": 0.16,
+  "max": 0.962
+ },
+ "worst_tpr": {
+  "min": 0.012,
+  "median": 0.022,
+  "max": 0.048
+ },
+ "fpr": {
+  "min": 0.044,
+  "median": 0.048,
+  "max": 0.064
+ },
+ "sets_saa_tpr_below_0.2": 19,
+ "sets_saa_tpr_above_0.5": 5,
+ "spearman_mean_auroc_vs_saa_tpr": 0.3204272442480111,
+ "between_set_sd_saa_tpr": 0.2775899895508672,
+ "within_set_bootstrap_sd_rms": 0.1820007662868424,
+ "ratio": 1.5252133010988063,
+ "exceeds_sampling_noise": false,
+ "sets": {
+  "official": {
+   "mean_auroc": 0.9366354815026919,
+   "saa_auroc": 0.9572839999999999,
+   "saa_tpr": 0.812,
+   "worst_tpr": 0.036,
+   "worst_family": "zulu",
+   "fpr": 0.044
+  },
+  "refset0": {
+   "mean_auroc": 0.9386709817459291,
+   "saa_auroc": 0.9489,
+   "saa_tpr": 0.396,
+   "worst_tpr": 0.024,
+   "worst_family": "zulu",
+   "fpr": 0.048
+  },
+  "refset1": {
+   "mean_auroc": 0.9166154559992323,
+   "saa_auroc": 0.9593879999999999,
+   "saa_tpr": 0.842,
+   "worst_tpr": 0.016,
+   "worst_family": "zulu",
+   "fpr": 0.048
+  },
+  "refset2": {
+   "mean_auroc": 0.9147443114183904,
+   "saa_auroc": 0.916276,
+   "saa_tpr": 0.018,
+   "worst_tpr": 0.018,
+   "worst_family": "saa",
+   "fpr": 0.044
+  },
+  "refset3": {
+   "mean_auroc": 0.9395501952223927,
+   "saa_auroc": 0.9535399999999999,
+   "saa_tpr": 0.652,
+   "worst_tpr": 0.032,
+   "worst_family": "zulu",
+   "fpr": 0.048
+  },
+  "refset4": {
+   "mean_auroc": 0.9395499578686685,
+   "saa_auroc": 0.9493199999999999,
+   "saa_tpr": 0.134,
+   "worst_tpr": 0.022,
+   "worst_family": "zulu",
+   "fpr": 0.048
+  },
+  "refset5": {
+   "mean_auroc": 0.9305708297771456,
+   "saa_auroc": 0.9561799999999999,
+   "saa_tpr": 0.962,
+   "worst_tpr": 0.03,
+   "worst_family": "zulu",
+   "fpr": 0.052
+  },
+  "refset6": {
+   "mean_auroc": 0.9170404254411623,
+   "saa_auroc": 0.940044,
+   "saa_tpr": 0.16,
+   "worst_tpr": 0.018,
+   "worst_family": "zulu",
+   "fpr": 0.046
+  },
+  "refset7": {
+   "mean_auroc": 0.8747398622559674,
+   "saa_auroc": 0.921852,
+   "saa_tpr": 0.194,
+   "worst_tpr": 0.016,
+   "worst_family": "zulu",
+   "fpr": 0.06
+  },
+  "refset8": {
+   "mean_auroc": 0.9408476417517996,
+   "saa_auroc": 0.945508,
+   "saa_tpr": 0.148,
+   "worst_tpr": 0.022,
+   "worst_family": "zulu",
+   "fpr": 0.05
+  },
+  "refset9": {
+   "mean_auroc": 0.9349025515647228,
+   "saa_auroc": 0.9403440000000001,
+   "saa_tpr": 0.102,
+   "worst_tpr": 0.032,
+   "worst_family": "zulu",
+   "fpr": 0.052
+  },
+  "refset10": {
+   "mean_auroc": 0.9379572176458756,
+   "saa_auroc": 0.94338,
+   "saa_tpr": 0.372,
+   "worst_tpr": 0.028,
+   "worst_family": "zulu",
+   "fpr": 0.05
+  },
+  "refset11": {
+   "mean_auroc": 0.9095143955153033,
+   "saa_auroc": 0.933736,
+   "saa_tpr": 0.094,
+   "worst_tpr": 0.02,
+   "worst_family": "zulu",
+   "fpr": 0.048
+  },
+  "refset12": {
+   "mean_auroc": 0.923251355402737,
+   "saa_auroc": 0.9471200000000001,
+   "saa_tpr": 0.214,
+   "worst_tpr": 0.022,
+   "worst_family": "zulu",
+   "fpr": 0.046
+  },
+  "refset13": {
+   "mean_auroc": 0.9322106648875464,
+   "saa_auroc": 0.941324,
+   "saa_tpr": 0.16,
+   "worst_tpr": 0.024,
+   "worst_family": "zulu",
+   "fpr": 0.05
+  },
+  "refset14": {
+   "mean_auroc": 0.9272250453519137,
+   "saa_auroc": 0.912956,
+   "saa_tpr": 0.048,
+   "worst_tpr": 0.048,
+   "worst_family": "saa",
+   "fpr": 0.05
+  },
+  "refset15": {
+   "mean_auroc": 0.9364939946662315,
+   "saa_auroc": 0.937052,
+   "saa_tpr": 0.152,
+   "worst_tpr": 0.02,
+   "worst_family": "zulu",
+   "fpr": 0.044
+  },
+  "refset16": {
+   "mean_auroc": 0.8656648403866956,
+   "saa_auroc": 0.8622479999999999,
+   "saa_tpr": 0.012,
+   "worst_tpr": 0.012,
+   "worst_family": "saa",
+   "fpr": 0.056
+  },
+  "refset17": {
+   "mean_auroc": 0.8673145876726007,
+   "saa_auroc": 0.9270320000000001,
+   "saa_tpr": 0.188,
+   "worst_tpr": 0.016,
+   "worst_family": "zulu",
+   "fpr": 0.056
+  },
+  "refset18": {
+   "mean_auroc": 0.9343996729241203,
+   "saa_auroc": 0.94382,
+   "saa_tpr": 0.266,
+   "worst_tpr": 0.026,
+   "worst_family": "zulu",
+   "fpr": 0.048
+  },
+  "refset19": {
+   "mean_auroc": 0.9183036673214567,
+   "saa_auroc": 0.940828,
+   "saa_tpr": 0.18,
+   "worst_tpr": 0.022,
+   "worst_family": "zulu",
+   "fpr": 0.048
+  },
+  "refset20": {
+   "mean_auroc": 0.8477426276076144,
+   "saa_auroc": 0.838652,
+   "saa_tpr": 0.03,
+   "worst_tpr": 0.014,
+   "worst_family": "zulu",
+   "fpr": 0.064
+  },
+  "refset21": {
+   "mean_auroc": 0.9319204917181364,
+   "saa_auroc": 0.947716,
+   "saa_tpr": 0.134,
+   "worst_tpr": 0.022,
+   "worst_family": "zulu",
+   "fpr": 0.046
+  },
+  "refset22": {
+   "mean_auroc": 0.9347196938917729,
+   "saa_auroc": 0.95368,
+   "saa_tpr": 0.442,
+   "worst_tpr": 0.024,
+   "worst_family": "zulu",
+   "fpr": 0.048
+  },
+  "refset23": {
+   "mean_auroc": 0.9017550097679702,
+   "saa_auroc": 0.9388120000000001,
+   "saa_tpr": 0.344,
+   "worst_tpr": 0.018,
+   "worst_family": "zulu",
+   "fpr": 0.062
+  },
+  "refset24": {
+   "mean_auroc": 0.9368701268814953,
+   "saa_auroc": 0.957096,
+   "saa_tpr": 0.944,
+   "worst_tpr": 0.03,
+   "worst_family": "zulu",
+   "fpr": 0.054
+  },
+  "refset25": {
+   "mean_auroc": 0.9336072407775172,
+   "saa_auroc": 0.94376,
+   "saa_tpr": 0.138,
+   "worst_tpr": 0.032,
+   "worst_family": "zulu",
+   "fpr": 0.048
+  },
+  "refset26": {
+   "mean_auroc": 0.9353213812777234,
+   "saa_auroc": 0.943744,
+   "saa_tpr": 0.128,
+   "worst_tpr": 0.024,
+   "worst_family": "zulu",
+   "fpr": 0.046
+  },
+  "refset27": {
+   "mean_auroc": 0.9110246791271791,
+   "saa_auroc": 0.9355640000000001,
+   "saa_tpr": 0.156,
+   "worst_tpr": 0.018,
+   "worst_family": "zulu",
+   "fpr": 0.046
+  },
+  "refset28": {
+   "mean_auroc": 0.9272492930180695,
+   "saa_auroc": 0.94288,
+   "saa_tpr": 0.13,
+   "worst_tpr": 0.038,
+   "worst_family": "zulu",
+   "fpr": 0.05
+  }
+ }
+}

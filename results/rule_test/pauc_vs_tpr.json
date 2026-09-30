@@ -1,0 +1,1597 @@
+{
+ "design": "paper/PREREG_20260926_extensions.md, section B",
+ "n_points": 175,
+ "n_points_internal": 140,
+ "spearman_auroc_vs_tpr": 0.912646418661385,
+ "spearman_pauroc_vs_tpr": 0.9701602333009065,
+ "spearman_auroc_vs_tpr_internal": 0.9084836563935909,
+ "spearman_pauroc_vs_tpr_internal": 0.956039943354954,
+ "high_auroc_low_tpr": 18,
+ "high_auroc_low_tpr_with_pauroc_above_0.75": 0,
+ "llama3_mtk_saa": {
+  "model": "llama3",
+  "detector": "MTK",
+  "family": "saa",
+  "n": 500,
+  "auroc": 0.918136,
+  "pauroc_0.05": 0.4876307692307692,
+  "tpr_0.05": 0.002
+ },
+ "points": [
+  {
+   "model": "llama2",
+   "detector": "MTK",
+   "family": "JailJudge",
+   "n": 500,
+   "auroc": 0.8951280000000001,
+   "pauroc_0.05": 0.6535794871794872,
+   "tpr_0.05": 0.548
+  },
+  {
+   "model": "llama2",
+   "detector": "MTK",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.968608,
+   "pauroc_0.05": 0.8439794871794872,
+   "tpr_0.05": 0.936
+  },
+  {
+   "model": "llama2",
+   "detector": "MTK",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.92224,
+   "pauroc_0.05": 0.6620717948717949,
+   "tpr_0.05": 0.584
+  },
+  {
+   "model": "llama2",
+   "detector": "MTK",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.9805999999999999,
+   "pauroc_0.05": 0.8666666666666667,
+   "tpr_0.05": 0.9625
+  },
+  {
+   "model": "llama2",
+   "detector": "MTK",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.936166,
+   "pauroc_0.05": 0.6928000000000001,
+   "tpr_0.05": 0.768
+  },
+  {
+   "model": "llama2",
+   "detector": "MTK",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.941884,
+   "pauroc_0.05": 0.4991589743589744,
+   "tpr_0.05": 0.114
+  },
+  {
+   "model": "llama2",
+   "detector": "MTK",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.9441999999999999,
+   "pauroc_0.05": 0.7083076923076923,
+   "tpr_0.05": 0.8
+  },
+  {
+   "model": "llama2",
+   "detector": "MTK",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.902276,
+   "pauroc_0.05": 0.4962051282051282,
+   "tpr_0.05": 0.034
+  },
+  {
+   "model": "llama2",
+   "detector": "GradSafe",
+   "family": "JailJudge",
+   "n": 500,
+   "auroc": 0.8697079999999999,
+   "pauroc_0.05": 0.5988923076923077,
+   "tpr_0.05": 0.436
+  },
+  {
+   "model": "llama2",
+   "detector": "GradSafe",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.99004,
+   "pauroc_0.05": 0.9159384615384616,
+   "tpr_0.05": 0.97
+  },
+  {
+   "model": "llama2",
+   "detector": "GradSafe",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.858332,
+   "pauroc_0.05": 0.6866871794871794,
+   "tpr_0.05": 0.558
+  },
+  {
+   "model": "llama2",
+   "detector": "GradSafe",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.9904999999999999,
+   "pauroc_0.05": 0.9030769230769231,
+   "tpr_0.05": 0.9875
+  },
+  {
+   "model": "llama2",
+   "detector": "GradSafe",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.9718840000000001,
+   "pauroc_0.05": 0.8134974358974358,
+   "tpr_0.05": 0.854
+  },
+  {
+   "model": "llama2",
+   "detector": "GradSafe",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.9572839999999999,
+   "pauroc_0.05": 0.5639794871794872,
+   "tpr_0.05": 0.812
+  },
+  {
+   "model": "llama2",
+   "detector": "GradSafe",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.96864,
+   "pauroc_0.05": 0.8178461538461539,
+   "tpr_0.05": 0.9
+  },
+  {
+   "model": "llama2",
+   "detector": "GradSafe",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.869416,
+   "pauroc_0.05": 0.4942358974358974,
+   "tpr_0.05": 0.036
+  },
+  {
+   "model": "llama2",
+   "detector": "HiddenDetect",
+   "family": "JailJudge",
+   "n": 500,
+   "auroc": 0.9448699999999999,
+   "pauroc_0.05": 0.664451282051282,
+   "tpr_0.05": 0.608
+  },
+  {
+   "model": "llama2",
+   "detector": "HiddenDetect",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.9625159999999999,
+   "pauroc_0.05": 0.6669128205128205,
+   "tpr_0.05": 0.822
+  },
+  {
+   "model": "llama2",
+   "detector": "HiddenDetect",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.8173959999999998,
+   "pauroc_0.05": 0.49501538461538463,
+   "tpr_0.05": 0.048
+  },
+  {
+   "model": "llama2",
+   "detector": "HiddenDetect",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.9169,
+   "pauroc_0.05": 0.5348717948717949,
+   "tpr_0.05": 0.3125
+  },
+  {
+   "model": "llama2",
+   "detector": "HiddenDetect",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.8960919999999999,
+   "pauroc_0.05": 0.6455794871794872,
+   "tpr_0.05": 0.588
+  },
+  {
+   "model": "llama2",
+   "detector": "HiddenDetect",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.764524,
+   "pauroc_0.05": 0.48717948717948717,
+   "tpr_0.05": 0.0
+  },
+  {
+   "model": "llama2",
+   "detector": "HiddenDetect",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.89636,
+   "pauroc_0.05": 0.6418461538461538,
+   "tpr_0.05": 0.64
+  },
+  {
+   "model": "llama2",
+   "detector": "HiddenDetect",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.9637,
+   "pauroc_0.05": 0.6473435897435897,
+   "tpr_0.05": 0.78
+  },
+  {
+   "model": "llama2",
+   "detector": "Linear probe",
+   "family": "JailJudge",
+   "n": 500,
+   "auroc": 0.9254719999999999,
+   "pauroc_0.05": 0.6721641025641025,
+   "tpr_0.05": 0.516
+  },
+  {
+   "model": "llama2",
+   "detector": "Linear probe",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.9865200000000001,
+   "pauroc_0.05": 0.9097025641025642,
+   "tpr_0.05": 0.93
+  },
+  {
+   "model": "llama2",
+   "detector": "Linear probe",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.9742599999999999,
+   "pauroc_0.05": 0.7385025641025641,
+   "tpr_0.05": 0.88
+  },
+  {
+   "model": "llama2",
+   "detector": "Linear probe",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.9953249999999999,
+   "pauroc_0.05": 0.9543589743589744,
+   "tpr_0.05": 0.9875
+  },
+  {
+   "model": "llama2",
+   "detector": "Linear probe",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.986332,
+   "pauroc_0.05": 0.8921846153846155,
+   "tpr_0.05": 0.954
+  },
+  {
+   "model": "llama2",
+   "detector": "Linear probe",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.881832,
+   "pauroc_0.05": 0.4877948717948718,
+   "tpr_0.05": 0.002
+  },
+  {
+   "model": "llama2",
+   "detector": "Linear probe",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.99136,
+   "pauroc_0.05": 0.9113846153846153,
+   "tpr_0.05": 1.0
+  },
+  {
+   "model": "llama2",
+   "detector": "Linear probe",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.8825839999999999,
+   "pauroc_0.05": 0.5182358974358975,
+   "tpr_0.05": 0.146
+  },
+  {
+   "model": "llama2",
+   "detector": "Windowed PPL",
+   "family": "JailJudge",
+   "n": 500,
+   "auroc": 0.288076,
+   "pauroc_0.05": 0.510851282051282,
+   "tpr_0.05": 0.084
+  },
+  {
+   "model": "llama2",
+   "detector": "Windowed PPL",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.94316,
+   "pauroc_0.05": 0.6453333333333333,
+   "tpr_0.05": 0.664
+  },
+  {
+   "model": "llama2",
+   "detector": "Windowed PPL",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.687196,
+   "pauroc_0.05": 0.48717948717948717,
+   "tpr_0.05": 0.002
+  },
+  {
+   "model": "llama2",
+   "detector": "Windowed PPL",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.712275,
+   "pauroc_0.05": 0.5007692307692307,
+   "tpr_0.05": 0.0625
+  },
+  {
+   "model": "llama2",
+   "detector": "Windowed PPL",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.187696,
+   "pauroc_0.05": 0.48717948717948717,
+   "tpr_0.05": 0.0
+  },
+  {
+   "model": "llama2",
+   "detector": "Windowed PPL",
+   "family": "saa",
+   "n": 500,
+   "auroc": 1.0,
+   "pauroc_0.05": 1.0,
+   "tpr_0.05": 1.0
+  },
+  {
+   "model": "llama2",
+   "detector": "Windowed PPL",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.16952,
+   "pauroc_0.05": 0.48717948717948717,
+   "tpr_0.05": 0.0
+  },
+  {
+   "model": "llama2",
+   "detector": "Windowed PPL",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.840848,
+   "pauroc_0.05": 0.5281230769230769,
+   "tpr_0.05": 0.216
+  },
+  {
+   "model": "llama3",
+   "detector": "MTK",
+   "family": "JailJudge",
+   "n": 500,
+   "auroc": 0.9760139999999999,
+   "pauroc_0.05": 0.8497846153846154,
+   "tpr_0.05": 0.876
+  },
+  {
+   "model": "llama3",
+   "detector": "MTK",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.984058,
+   "pauroc_0.05": 0.8946666666666667,
+   "tpr_0.05": 0.956
+  },
+  {
+   "model": "llama3",
+   "detector": "MTK",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.9598760000000001,
+   "pauroc_0.05": 0.8220307692307691,
+   "tpr_0.05": 0.862
+  },
+  {
+   "model": "llama3",
+   "detector": "MTK",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.9824749999999999,
+   "pauroc_0.05": 0.8558974358974358,
+   "tpr_0.05": 0.9375
+  },
+  {
+   "model": "llama3",
+   "detector": "MTK",
+   "family": "nanogcg",
+   "n": 500,
+   "auroc": 0.9908060000000001,
+   "pauroc_0.05": 0.9155897435897437,
+   "tpr_0.05": 0.952
+  },
+  {
+   "model": "llama3",
+   "detector": "MTK",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.9562,
+   "pauroc_0.05": 0.7808820512820513,
+   "tpr_0.05": 0.828
+  },
+  {
+   "model": "llama3",
+   "detector": "MTK",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.918136,
+   "pauroc_0.05": 0.4876307692307692,
+   "tpr_0.05": 0.002
+  },
+  {
+   "model": "llama3",
+   "detector": "MTK",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.97452,
+   "pauroc_0.05": 0.8256410256410256,
+   "tpr_0.05": 0.92
+  },
+  {
+   "model": "llama3",
+   "detector": "MTK",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.974792,
+   "pauroc_0.05": 0.7981538461538461,
+   "tpr_0.05": 0.752
+  },
+  {
+   "model": "llama3",
+   "detector": "GradSafe",
+   "family": "JailJudge",
+   "n": 500,
+   "auroc": 0.9675399999999998,
+   "pauroc_0.05": 0.7983179487179487,
+   "tpr_0.05": 0.668
+  },
+  {
+   "model": "llama3",
+   "detector": "GradSafe",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.9959759999999999,
+   "pauroc_0.05": 0.968328205128205,
+   "tpr_0.05": 0.966
+  },
+  {
+   "model": "llama3",
+   "detector": "GradSafe",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.975372,
+   "pauroc_0.05": 0.8204717948717949,
+   "tpr_0.05": 0.74
+  },
+  {
+   "model": "llama3",
+   "detector": "GradSafe",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.98355,
+   "pauroc_0.05": 0.9061538461538461,
+   "tpr_0.05": 0.9375
+  },
+  {
+   "model": "llama3",
+   "detector": "GradSafe",
+   "family": "nanogcg",
+   "n": 500,
+   "auroc": 0.979308,
+   "pauroc_0.05": 0.834625641025641,
+   "tpr_0.05": 0.728
+  },
+  {
+   "model": "llama3",
+   "detector": "GradSafe",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.9261679999999999,
+   "pauroc_0.05": 0.8274461538461539,
+   "tpr_0.05": 0.718
+  },
+  {
+   "model": "llama3",
+   "detector": "GradSafe",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.8321120000000001,
+   "pauroc_0.05": 0.4952615384615385,
+   "tpr_0.05": 0.008
+  },
+  {
+   "model": "llama3",
+   "detector": "GradSafe",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.98728,
+   "pauroc_0.05": 0.9208205128205127,
+   "tpr_0.05": 0.94
+  },
+  {
+   "model": "llama3",
+   "detector": "GradSafe",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.9518639999999999,
+   "pauroc_0.05": 0.6066051282051282,
+   "tpr_0.05": 0.08
+  },
+  {
+   "model": "llama3",
+   "detector": "HiddenDetect",
+   "family": "JailJudge",
+   "n": 500,
+   "auroc": 0.7272959999999999,
+   "pauroc_0.05": 0.5728,
+   "tpr_0.05": 0.25
+  },
+  {
+   "model": "llama3",
+   "detector": "HiddenDetect",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.76196,
+   "pauroc_0.05": 0.4999794871794872,
+   "tpr_0.05": 0.048
+  },
+  {
+   "model": "llama3",
+   "detector": "HiddenDetect",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.6762400000000001,
+   "pauroc_0.05": 0.48717948717948717,
+   "tpr_0.05": 0.0
+  },
+  {
+   "model": "llama3",
+   "detector": "HiddenDetect",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.6124750000000001,
+   "pauroc_0.05": 0.5117948717948718,
+   "tpr_0.05": 0.0625
+  },
+  {
+   "model": "llama3",
+   "detector": "HiddenDetect",
+   "family": "nanogcg",
+   "n": 500,
+   "auroc": 0.564572,
+   "pauroc_0.05": 0.5033846153846154,
+   "tpr_0.05": 0.054
+  },
+  {
+   "model": "llama3",
+   "detector": "HiddenDetect",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.6327679999999999,
+   "pauroc_0.05": 0.5129846153846154,
+   "tpr_0.05": 0.088
+  },
+  {
+   "model": "llama3",
+   "detector": "HiddenDetect",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.08986,
+   "pauroc_0.05": 0.48717948717948717,
+   "tpr_0.05": 0.0
+  },
+  {
+   "model": "llama3",
+   "detector": "HiddenDetect",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.77668,
+   "pauroc_0.05": 0.5298461538461539,
+   "tpr_0.05": 0.18
+  },
+  {
+   "model": "llama3",
+   "detector": "HiddenDetect",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.364552,
+   "pauroc_0.05": 0.4886153846153846,
+   "tpr_0.05": 0.004
+  },
+  {
+   "model": "llama3",
+   "detector": "Linear probe",
+   "family": "JailJudge",
+   "n": 500,
+   "auroc": 0.9676319999999999,
+   "pauroc_0.05": 0.7994256410256411,
+   "tpr_0.05": 0.72
+  },
+  {
+   "model": "llama3",
+   "detector": "Linear probe",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.99624,
+   "pauroc_0.05": 0.9663999999999999,
+   "tpr_0.05": 0.966
+  },
+  {
+   "model": "llama3",
+   "detector": "Linear probe",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.93936,
+   "pauroc_0.05": 0.8873435897435897,
+   "tpr_0.05": 0.848
+  },
+  {
+   "model": "llama3",
+   "detector": "Linear probe",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.98985,
+   "pauroc_0.05": 0.9261538461538461,
+   "tpr_0.05": 0.95
+  },
+  {
+   "model": "llama3",
+   "detector": "Linear probe",
+   "family": "nanogcg",
+   "n": 500,
+   "auroc": 0.987792,
+   "pauroc_0.05": 0.8881641025641026,
+   "tpr_0.05": 0.912
+  },
+  {
+   "model": "llama3",
+   "detector": "Linear probe",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.971452,
+   "pauroc_0.05": 0.8837333333333333,
+   "tpr_0.05": 0.848
+  },
+  {
+   "model": "llama3",
+   "detector": "Linear probe",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.585948,
+   "pauroc_0.05": 0.48717948717948717,
+   "tpr_0.05": 0.0
+  },
+  {
+   "model": "llama3",
+   "detector": "Linear probe",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.99136,
+   "pauroc_0.05": 0.9343589743589744,
+   "tpr_0.05": 0.94
+  },
+  {
+   "model": "llama3",
+   "detector": "Linear probe",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.9402680000000001,
+   "pauroc_0.05": 0.5507692307692308,
+   "tpr_0.05": 0.106
+  },
+  {
+   "model": "llama3",
+   "detector": "Windowed PPL",
+   "family": "JailJudge",
+   "n": 500,
+   "auroc": 0.421748,
+   "pauroc_0.05": 0.5046564102564103,
+   "tpr_0.05": 0.062
+  },
+  {
+   "model": "llama3",
+   "detector": "Windowed PPL",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.9530399999999999,
+   "pauroc_0.05": 0.6907076923076922,
+   "tpr_0.05": 0.68
+  },
+  {
+   "model": "llama3",
+   "detector": "Windowed PPL",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.6928,
+   "pauroc_0.05": 0.48726153846153847,
+   "tpr_0.05": 0.0
+  },
+  {
+   "model": "llama3",
+   "detector": "Windowed PPL",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.724575,
+   "pauroc_0.05": 0.514102564102564,
+   "tpr_0.05": 0.1
+  },
+  {
+   "model": "llama3",
+   "detector": "Windowed PPL",
+   "family": "nanogcg",
+   "n": 500,
+   "auroc": 0.980198,
+   "pauroc_0.05": 0.9320410256410256,
+   "tpr_0.05": 0.912
+  },
+  {
+   "model": "llama3",
+   "detector": "Windowed PPL",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.19516,
+   "pauroc_0.05": 0.4872205128205128,
+   "tpr_0.05": 0.0
+  },
+  {
+   "model": "llama3",
+   "detector": "Windowed PPL",
+   "family": "saa",
+   "n": 500,
+   "auroc": 1.0,
+   "pauroc_0.05": 1.0,
+   "tpr_0.05": 1.0
+  },
+  {
+   "model": "llama3",
+   "detector": "Windowed PPL",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.18248000000000003,
+   "pauroc_0.05": 0.48717948717948717,
+   "tpr_0.05": 0.0
+  },
+  {
+   "model": "llama3",
+   "detector": "Windowed PPL",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.656292,
+   "pauroc_0.05": 0.497025641025641,
+   "tpr_0.05": 0.04
+  },
+  {
+   "model": "mistral",
+   "detector": "MTK",
+   "family": "JailJudge_all",
+   "n": 500,
+   "auroc": 0.918416,
+   "pauroc_0.05": 0.6999384615384615,
+   "tpr_0.05": 0.55
+  },
+  {
+   "model": "mistral",
+   "detector": "MTK",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.9245960000000001,
+   "pauroc_0.05": 0.5010461538461538,
+   "tpr_0.05": 0.108
+  },
+  {
+   "model": "mistral",
+   "detector": "MTK",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.92814,
+   "pauroc_0.05": 0.5083897435897435,
+   "tpr_0.05": 0.124
+  },
+  {
+   "model": "mistral",
+   "detector": "MTK",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.984725,
+   "pauroc_0.05": 0.8530769230769231,
+   "tpr_0.05": 0.9375
+  },
+  {
+   "model": "mistral",
+   "detector": "MTK",
+   "family": "nonagcg",
+   "n": 500,
+   "auroc": 0.978032,
+   "pauroc_0.05": 0.8283487179487179,
+   "tpr_0.05": 0.876
+  },
+  {
+   "model": "mistral",
+   "detector": "MTK",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.9771340000000001,
+   "pauroc_0.05": 0.8557333333333332,
+   "tpr_0.05": 0.906
+  },
+  {
+   "model": "mistral",
+   "detector": "MTK",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.9814479999999999,
+   "pauroc_0.05": 0.809723076923077,
+   "tpr_0.05": 1.0
+  },
+  {
+   "model": "mistral",
+   "detector": "MTK",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.9550000000000001,
+   "pauroc_0.05": 0.8055384615384615,
+   "tpr_0.05": 0.82
+  },
+  {
+   "model": "mistral",
+   "detector": "MTK",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.95756,
+   "pauroc_0.05": 0.7314461538461539,
+   "tpr_0.05": 0.688
+  },
+  {
+   "model": "mistral",
+   "detector": "GradSafe",
+   "family": "JailJudge_all",
+   "n": 500,
+   "auroc": 0.921236,
+   "pauroc_0.05": 0.6092307692307692,
+   "tpr_0.05": 0.398
+  },
+  {
+   "model": "mistral",
+   "detector": "GradSafe",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.8813679999999999,
+   "pauroc_0.05": 0.5377641025641026,
+   "tpr_0.05": 0.186
+  },
+  {
+   "model": "mistral",
+   "detector": "GradSafe",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.8901479999999999,
+   "pauroc_0.05": 0.6360205128205128,
+   "tpr_0.05": 0.486
+  },
+  {
+   "model": "mistral",
+   "detector": "GradSafe",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.9642,
+   "pauroc_0.05": 0.7212820512820513,
+   "tpr_0.05": 0.8375
+  },
+  {
+   "model": "mistral",
+   "detector": "GradSafe",
+   "family": "nonagcg",
+   "n": 500,
+   "auroc": 0.990588,
+   "pauroc_0.05": 0.9443282051282051,
+   "tpr_0.05": 0.956
+  },
+  {
+   "model": "mistral",
+   "detector": "GradSafe",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.9140320000000001,
+   "pauroc_0.05": 0.7892102564102563,
+   "tpr_0.05": 0.682
+  },
+  {
+   "model": "mistral",
+   "detector": "GradSafe",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.849436,
+   "pauroc_0.05": 0.4875076923076923,
+   "tpr_0.05": 0.012
+  },
+  {
+   "model": "mistral",
+   "detector": "GradSafe",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.8257599999999999,
+   "pauroc_0.05": 0.6914871794871795,
+   "tpr_0.05": 0.52
+  },
+  {
+   "model": "mistral",
+   "detector": "GradSafe",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.9067999999999999,
+   "pauroc_0.05": 0.49136410256410257,
+   "tpr_0.05": 0.022
+  },
+  {
+   "model": "mistral",
+   "detector": "HiddenDetect",
+   "family": "JailJudge_all",
+   "n": 500,
+   "auroc": 0.8137960000000001,
+   "pauroc_0.05": 0.5090051282051282,
+   "tpr_0.05": 0.16
+  },
+  {
+   "model": "mistral",
+   "detector": "HiddenDetect",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.61648,
+   "pauroc_0.05": 0.48857435897435897,
+   "tpr_0.05": 0.008
+  },
+  {
+   "model": "mistral",
+   "detector": "HiddenDetect",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.779584,
+   "pauroc_0.05": 0.5521230769230769,
+   "tpr_0.05": 0.332
+  },
+  {
+   "model": "mistral",
+   "detector": "HiddenDetect",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.418025,
+   "pauroc_0.05": 0.49205128205128207,
+   "tpr_0.05": 0.025
+  },
+  {
+   "model": "mistral",
+   "detector": "HiddenDetect",
+   "family": "nonagcg",
+   "n": 500,
+   "auroc": 0.866828,
+   "pauroc_0.05": 0.5677948717948718,
+   "tpr_0.05": 0.396
+  },
+  {
+   "model": "mistral",
+   "detector": "HiddenDetect",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.7494959999999999,
+   "pauroc_0.05": 0.5031794871794871,
+   "tpr_0.05": 0.112
+  },
+  {
+   "model": "mistral",
+   "detector": "HiddenDetect",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.43776800000000005,
+   "pauroc_0.05": 0.48717948717948717,
+   "tpr_0.05": 0.0
+  },
+  {
+   "model": "mistral",
+   "detector": "HiddenDetect",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.6734,
+   "pauroc_0.05": 0.5007179487179487,
+   "tpr_0.05": 0.06
+  },
+  {
+   "model": "mistral",
+   "detector": "HiddenDetect",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.757868,
+   "pauroc_0.05": 0.4884512820512821,
+   "tpr_0.05": 0.01
+  },
+  {
+   "model": "mistral",
+   "detector": "Linear probe",
+   "family": "JailJudge_all",
+   "n": 500,
+   "auroc": 0.9126679999999999,
+   "pauroc_0.05": 0.7040820512820514,
+   "tpr_0.05": 0.476
+  },
+  {
+   "model": "mistral",
+   "detector": "Linear probe",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.419972,
+   "pauroc_0.05": 0.48783589743589745,
+   "tpr_0.05": 0.002
+  },
+  {
+   "model": "mistral",
+   "detector": "Linear probe",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.9931,
+   "pauroc_0.05": 0.9292307692307692,
+   "tpr_0.05": 1.0
+  },
+  {
+   "model": "mistral",
+   "detector": "Linear probe",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.9653,
+   "pauroc_0.05": 0.8266666666666667,
+   "tpr_0.05": 0.775
+  },
+  {
+   "model": "mistral",
+   "detector": "Linear probe",
+   "family": "nonagcg",
+   "n": 500,
+   "auroc": 0.9647,
+   "pauroc_0.05": 0.8421333333333333,
+   "tpr_0.05": 0.766
+  },
+  {
+   "model": "mistral",
+   "detector": "Linear probe",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.99006,
+   "pauroc_0.05": 0.935425641025641,
+   "tpr_0.05": 0.92
+  },
+  {
+   "model": "mistral",
+   "detector": "Linear probe",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.968284,
+   "pauroc_0.05": 0.685251282051282,
+   "tpr_0.05": 0.466
+  },
+  {
+   "model": "mistral",
+   "detector": "Linear probe",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.9769999999999999,
+   "pauroc_0.05": 0.9146666666666667,
+   "tpr_0.05": 0.9
+  },
+  {
+   "model": "mistral",
+   "detector": "Linear probe",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.7939280000000001,
+   "pauroc_0.05": 0.5058461538461538,
+   "tpr_0.05": 0.04
+  },
+  {
+   "model": "mistral",
+   "detector": "Windowed PPL",
+   "family": "JailJudge_all",
+   "n": 500,
+   "auroc": 0.32064,
+   "pauroc_0.05": 0.4978051282051282,
+   "tpr_0.05": 0.042
+  },
+  {
+   "model": "mistral",
+   "detector": "Windowed PPL",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.907708,
+   "pauroc_0.05": 0.5490051282051283,
+   "tpr_0.05": 0.258
+  },
+  {
+   "model": "mistral",
+   "detector": "Windowed PPL",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.871756,
+   "pauroc_0.05": 0.6008615384615384,
+   "tpr_0.05": 0.358
+  },
+  {
+   "model": "mistral",
+   "detector": "Windowed PPL",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.763975,
+   "pauroc_0.05": 0.5215384615384615,
+   "tpr_0.05": 0.1125
+  },
+  {
+   "model": "mistral",
+   "detector": "Windowed PPL",
+   "family": "nonagcg",
+   "n": 500,
+   "auroc": 0.816468,
+   "pauroc_0.05": 0.7470358974358975,
+   "tpr_0.05": 0.558
+  },
+  {
+   "model": "mistral",
+   "detector": "Windowed PPL",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.259548,
+   "pauroc_0.05": 0.4982974358974359,
+   "tpr_0.05": 0.028
+  },
+  {
+   "model": "mistral",
+   "detector": "Windowed PPL",
+   "family": "saa",
+   "n": 500,
+   "auroc": 1.0,
+   "pauroc_0.05": 1.0,
+   "tpr_0.05": 1.0
+  },
+  {
+   "model": "mistral",
+   "detector": "Windowed PPL",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.31600000000000006,
+   "pauroc_0.05": 0.5134358974358975,
+   "tpr_0.05": 0.1
+  },
+  {
+   "model": "mistral",
+   "detector": "Windowed PPL",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.795232,
+   "pauroc_0.05": 0.5059282051282051,
+   "tpr_0.05": 0.098
+  },
+  {
+   "model": "vicuna",
+   "detector": "MTK",
+   "family": "JailJudge_all",
+   "n": 500,
+   "auroc": 0.9227679999999999,
+   "pauroc_0.05": 0.6792205128205128,
+   "tpr_0.05": 0.512
+  },
+  {
+   "model": "vicuna",
+   "detector": "MTK",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.9607439999999999,
+   "pauroc_0.05": 0.8124307692307693,
+   "tpr_0.05": 0.744
+  },
+  {
+   "model": "vicuna",
+   "detector": "MTK",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.9565640000000001,
+   "pauroc_0.05": 0.849148717948718,
+   "tpr_0.05": 0.788
+  },
+  {
+   "model": "vicuna",
+   "detector": "MTK",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.9361,
+   "pauroc_0.05": 0.762051282051282,
+   "tpr_0.05": 0.725
+  },
+  {
+   "model": "vicuna",
+   "detector": "MTK",
+   "family": "nonagcg",
+   "n": 500,
+   "auroc": 0.985124,
+   "pauroc_0.05": 0.9033846153846155,
+   "tpr_0.05": 0.922
+  },
+  {
+   "model": "vicuna",
+   "detector": "MTK",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.938652,
+   "pauroc_0.05": 0.7442461538461538,
+   "tpr_0.05": 0.726
+  },
+  {
+   "model": "vicuna",
+   "detector": "MTK",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.8502559999999999,
+   "pauroc_0.05": 0.4940307692307692,
+   "tpr_0.05": 0.026
+  },
+  {
+   "model": "vicuna",
+   "detector": "MTK",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.94604,
+   "pauroc_0.05": 0.7694358974358975,
+   "tpr_0.05": 0.82
+  },
+  {
+   "model": "vicuna",
+   "detector": "MTK",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.866388,
+   "pauroc_0.05": 0.5234461538461539,
+   "tpr_0.05": 0.108
+  },
+  {
+   "model": "vicuna",
+   "detector": "GradSafe",
+   "family": "JailJudge_all",
+   "n": 500,
+   "auroc": 0.7371800000000002,
+   "pauroc_0.05": 0.5168820512820513,
+   "tpr_0.05": 0.148
+  },
+  {
+   "model": "vicuna",
+   "detector": "GradSafe",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.9735199999999999,
+   "pauroc_0.05": 0.8054153846153846,
+   "tpr_0.05": 0.904
+  },
+  {
+   "model": "vicuna",
+   "detector": "GradSafe",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.906476,
+   "pauroc_0.05": 0.5481435897435898,
+   "tpr_0.05": 0.39
+  },
+  {
+   "model": "vicuna",
+   "detector": "GradSafe",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.9925,
+   "pauroc_0.05": 0.9261538461538461,
+   "tpr_0.05": 0.9875
+  },
+  {
+   "model": "vicuna",
+   "detector": "GradSafe",
+   "family": "nonagcg",
+   "n": 500,
+   "auroc": 0.934984,
+   "pauroc_0.05": 0.7394461538461539,
+   "tpr_0.05": 0.722
+  },
+  {
+   "model": "vicuna",
+   "detector": "GradSafe",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.8889600000000001,
+   "pauroc_0.05": 0.6565743589743589,
+   "tpr_0.05": 0.588
+  },
+  {
+   "model": "vicuna",
+   "detector": "GradSafe",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.930484,
+   "pauroc_0.05": 0.5577435897435897,
+   "tpr_0.05": 0.298
+  },
+  {
+   "model": "vicuna",
+   "detector": "GradSafe",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.88724,
+   "pauroc_0.05": 0.6828717948717948,
+   "tpr_0.05": 0.68
+  },
+  {
+   "model": "vicuna",
+   "detector": "GradSafe",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.786264,
+   "pauroc_0.05": 0.48754871794871796,
+   "tpr_0.05": 0.002
+  },
+  {
+   "model": "vicuna",
+   "detector": "HiddenDetect",
+   "family": "JailJudge_all",
+   "n": 500,
+   "auroc": 0.9525399999999999,
+   "pauroc_0.05": 0.7526153846153847,
+   "tpr_0.05": 0.658
+  },
+  {
+   "model": "vicuna",
+   "detector": "HiddenDetect",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.9395720000000001,
+   "pauroc_0.05": 0.6255589743589745,
+   "tpr_0.05": 0.372
+  },
+  {
+   "model": "vicuna",
+   "detector": "HiddenDetect",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.978728,
+   "pauroc_0.05": 0.8629333333333333,
+   "tpr_0.05": 0.84
+  },
+  {
+   "model": "vicuna",
+   "detector": "HiddenDetect",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.8866,
+   "pauroc_0.05": 0.6256410256410256,
+   "tpr_0.05": 0.35
+  },
+  {
+   "model": "vicuna",
+   "detector": "HiddenDetect",
+   "family": "nonagcg",
+   "n": 500,
+   "auroc": 0.9809800000000001,
+   "pauroc_0.05": 0.8595692307692309,
+   "tpr_0.05": 0.858
+  },
+  {
+   "model": "vicuna",
+   "detector": "HiddenDetect",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.951724,
+   "pauroc_0.05": 0.7961846153846153,
+   "tpr_0.05": 0.706
+  },
+  {
+   "model": "vicuna",
+   "detector": "HiddenDetect",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.89176,
+   "pauroc_0.05": 0.493374358974359,
+   "tpr_0.05": 0.018
+  },
+  {
+   "model": "vicuna",
+   "detector": "HiddenDetect",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.93848,
+   "pauroc_0.05": 0.803076923076923,
+   "tpr_0.05": 0.72
+  },
+  {
+   "model": "vicuna",
+   "detector": "HiddenDetect",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.967132,
+   "pauroc_0.05": 0.6856615384615384,
+   "tpr_0.05": 0.664
+  },
+  {
+   "model": "vicuna",
+   "detector": "Linear probe",
+   "family": "JailJudge_all",
+   "n": 500,
+   "auroc": 0.9191159999999998,
+   "pauroc_0.05": 0.6900512820512821,
+   "tpr_0.05": 0.568
+  },
+  {
+   "model": "vicuna",
+   "detector": "Linear probe",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.850972,
+   "pauroc_0.05": 0.5107692307692308,
+   "tpr_0.05": 0.168
+  },
+  {
+   "model": "vicuna",
+   "detector": "Linear probe",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.897192,
+   "pauroc_0.05": 0.6043897435897436,
+   "tpr_0.05": 0.39
+  },
+  {
+   "model": "vicuna",
+   "detector": "Linear probe",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.9324250000000001,
+   "pauroc_0.05": 0.7143589743589743,
+   "tpr_0.05": 0.7
+  },
+  {
+   "model": "vicuna",
+   "detector": "Linear probe",
+   "family": "nonagcg",
+   "n": 500,
+   "auroc": 0.963828,
+   "pauroc_0.05": 0.7624205128205128,
+   "tpr_0.05": 0.802
+  },
+  {
+   "model": "vicuna",
+   "detector": "Linear probe",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.950032,
+   "pauroc_0.05": 0.7728820512820513,
+   "tpr_0.05": 0.742
+  },
+  {
+   "model": "vicuna",
+   "detector": "Linear probe",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.884776,
+   "pauroc_0.05": 0.48717948717948717,
+   "tpr_0.05": 0.0
+  },
+  {
+   "model": "vicuna",
+   "detector": "Linear probe",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.9485199999999999,
+   "pauroc_0.05": 0.8313846153846154,
+   "tpr_0.05": 0.78
+  },
+  {
+   "model": "vicuna",
+   "detector": "Linear probe",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.8819079999999999,
+   "pauroc_0.05": 0.49333333333333335,
+   "tpr_0.05": 0.046
+  },
+  {
+   "model": "vicuna",
+   "detector": "Windowed PPL",
+   "family": "JailJudge_all",
+   "n": 500,
+   "auroc": 0.29504,
+   "pauroc_0.05": 0.5031794871794871,
+   "tpr_0.05": 0.072
+  },
+  {
+   "model": "vicuna",
+   "detector": "Windowed PPL",
+   "family": "autodan",
+   "n": 500,
+   "auroc": 0.826168,
+   "pauroc_0.05": 0.49817435897435897,
+   "tpr_0.05": 0.048
+  },
+  {
+   "model": "vicuna",
+   "detector": "Windowed PPL",
+   "family": "drattack",
+   "n": 500,
+   "auroc": 0.627892,
+   "pauroc_0.05": 0.48726153846153847,
+   "tpr_0.05": 0.002
+  },
+  {
+   "model": "vicuna",
+   "detector": "Windowed PPL",
+   "family": "ijp",
+   "n": 80,
+   "auroc": 0.7022250000000001,
+   "pauroc_0.05": 0.4982051282051282,
+   "tpr_0.05": 0.1
+  },
+  {
+   "model": "vicuna",
+   "detector": "Windowed PPL",
+   "family": "nonagcg",
+   "n": 500,
+   "auroc": 0.920472,
+   "pauroc_0.05": 0.8531282051282052,
+   "tpr_0.05": 0.782
+  },
+  {
+   "model": "vicuna",
+   "detector": "Windowed PPL",
+   "family": "pair",
+   "n": 500,
+   "auroc": 0.16442,
+   "pauroc_0.05": 0.48717948717948717,
+   "tpr_0.05": 0.0
+  },
+  {
+   "model": "vicuna",
+   "detector": "Windowed PPL",
+   "family": "saa",
+   "n": 500,
+   "auroc": 0.7257480000000001,
+   "pauroc_0.05": 0.6164102564102564,
+   "tpr_0.05": 0.252
+  },
+  {
+   "model": "vicuna",
+   "detector": "Windowed PPL",
+   "family": "tap",
+   "n": 50,
+   "auroc": 0.12808,
+   "pauroc_0.05": 0.48717948717948717,
+   "tpr_0.05": 0.0
+  },
+  {
+   "model": "vicuna",
+   "detector": "Windowed PPL",
+   "family": "zulu",
+   "n": 500,
+   "auroc": 0.837732,
+   "pauroc_0.05": 0.5259897435897436,
+   "tpr_0.05": 0.198
+  }
+ ]
+}

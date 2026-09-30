@@ -1,0 +1,20 @@
+{
+ "driver_cache/llama2_bank_seed27.pt": "content-identical (paths normalised)",
+ "driver_cache/llama2_extras.pt": "byte-identical",
+ "driver_cache/llama3_bank_seed143.pt": "content-identical (paths normalised)",
+ "driver_cache/llama3_extras.pt": "byte-identical",
+ "driver_cache/mistral_bank_seed47.pt": "content-identical (paths normalised)",
+ "driver_cache/mistral_extras.pt": "byte-identical",
+ "driver_cache/vicuna_bank_seed56.pt": "byte-identical",
+ "driver_cache/vicuna_extras.pt": "byte-identical",
+ "driver_cache/vicuna_test_allrecords.pt": "byte-identical",
+ "driver_cache/vicuna_test_exact_shipped.pt": "byte-identical",
+ "release/llm/canonical_assets/llama2/cache/ranks/seed-27.pt": "content-identical (paths normalised)",
+ "release/llm/canonical_assets/llama2/cache/test_features.pt": "content-identical (paths normalised)",
+ "release/llm/canonical_assets/llama2/cache/training/seed-27.pt": "content-identical (paths normalised)",
+ "release/llm/canonical_assets/llama3/cache/ranks/seed-143.pt": "content-identical (paths normalised)",
+ "release/llm/canonical_assets/llama3/cache/test_features.pt": "content-identical (paths normalised)",
+ "release/llm/canonical_assets/llama3/cache/training/seed-143.pt": "content-identical (paths normalised)",
+ "release/llm/canonical_assets/mistral/cache/ranks/seed-47.pt": "content-identical (paths normalised)",
+ "release/llm/canonical_assets/mistral/cache/test_features.pt": "content-identical (paths normalised)"
+}

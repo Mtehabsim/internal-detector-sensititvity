@@ -1,0 +1,7 @@
+{
+ "model": "llama2",
+ "release": "c5e2f18d913bd18b09b9357159543487beb2ce75",
+ "reference": "$MTK_RELEASE_SCRATCH/driver_cache",
+ "extras": "identical",
+ "bank": "identical"
+}

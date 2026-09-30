@@ -1,0 +1,221 @@
+{
+ "B": 20000,
+ "seed": 20260925,
+ "budget": 0.05,
+ "n_calibration": 989,
+ "n_saa": 500,
+ "sets": {
+  "official": {
+   "saa_tpr": 0.812,
+   "ci": [
+    0.186,
+    1.0
+   ]
+  },
+  "refset0": {
+   "saa_tpr": 0.396,
+   "ci": [
+    0.05,
+    0.992
+   ]
+  },
+  "refset1": {
+   "saa_tpr": 0.842,
+   "ci": [
+    0.12,
+    0.996
+   ]
+  },
+  "refset2": {
+   "saa_tpr": 0.018,
+   "ci": [
+    0.0,
+    0.11
+   ]
+  },
+  "refset3": {
+   "saa_tpr": 0.652,
+   "ci": [
+    0.1,
+    1.0
+   ]
+  },
+  "refset4": {
+   "saa_tpr": 0.134,
+   "ci": [
+    0.018,
+    0.882
+   ]
+  }
+ },
+ "pairs": {
+  "official-refset0": {
+   "diff": 0.41600000000000004,
+   "ci": [
+    -0.018000000000000016,
+    0.62
+   ],
+   "excludes_zero": false,
+   "p_bootstrap": 0.0907,
+   "holm_reject": false,
+   "holm_threshold": 0.008333333333333333
+  },
+  "official-refset1": {
+   "diff": -0.029999999999999916,
+   "ci": [
+    -0.44599999999999995,
+    0.22604999999999564
+   ],
+   "excludes_zero": false,
+   "p_bootstrap": 0.757,
+   "holm_reject": false,
+   "holm_threshold": 0.05
+  },
+  "official-refset2": {
+   "diff": 0.794,
+   "ci": [
+    0.18395000000000003,
+    0.96
+   ],
+   "excludes_zero": true,
+   "p_bootstrap": 5e-05,
+   "holm_reject": true,
+   "holm_threshold": 0.0033333333333333335
+  },
+  "official-refset3": {
+   "diff": 0.16000000000000003,
+   "ci": [
+    -0.09799999999999998,
+    0.4
+   ],
+   "excludes_zero": false,
+   "p_bootstrap": 0.4965,
+   "holm_reject": false,
+   "holm_threshold": 0.025
+  },
+  "official-refset4": {
+   "diff": 0.678,
+   "ci": [
+    0.08395000000000001,
+    0.772
+   ],
+   "excludes_zero": true,
+   "p_bootstrap": 0.0014,
+   "holm_reject": true,
+   "holm_threshold": 0.004545454545454546
+  },
+  "refset0-refset1": {
+   "diff": -0.44599999999999995,
+   "ci": [
+    -0.6539999999999999,
+    0.0
+   ],
+   "excludes_zero": false,
+   "p_bootstrap": 0.0611,
+   "holm_reject": false,
+   "holm_threshold": 0.0071428571428571435
+  },
+  "refset0-refset2": {
+   "diff": 0.378,
+   "ci": [
+    0.046,
+    0.898
+   ],
+   "excludes_zero": true,
+   "p_bootstrap": 0.0001,
+   "holm_reject": true,
+   "holm_threshold": 0.0038461538461538464
+  },
+  "refset0-refset3": {
+   "diff": -0.256,
+   "ci": [
+    -0.542,
+    0.18004999999999569
+   ],
+   "excludes_zero": false,
+   "p_bootstrap": 0.3668,
+   "holm_reject": false,
+   "holm_threshold": 0.0125
+  },
+  "refset0-refset4": {
+   "diff": 0.262,
+   "ci": [
+    -0.018000000000000002,
+    0.55
+   ],
+   "excludes_zero": false,
+   "p_bootstrap": 0.1021,
+   "holm_reject": false,
+   "holm_threshold": 0.01
+  },
+  "refset1-refset2": {
+   "diff": 0.824,
+   "ci": [
+    0.11599999999999999,
+    0.968
+   ],
+   "excludes_zero": true,
+   "p_bootstrap": 5e-05,
+   "holm_reject": true,
+   "holm_threshold": 0.0035714285714285718
+  },
+  "refset1-refset3": {
+   "diff": 0.18999999999999995,
+   "ci": [
+    -0.10999999999999999,
+    0.642
+   ],
+   "excludes_zero": false,
+   "p_bootstrap": 0.4918,
+   "holm_reject": false,
+   "holm_threshold": 0.016666666666666666
+  },
+  "refset1-refset4": {
+   "diff": 0.708,
+   "ci": [
+    0.052000000000000005,
+    0.844
+   ],
+   "excludes_zero": true,
+   "p_bootstrap": 0.002,
+   "holm_reject": true,
+   "holm_threshold": 0.005
+  },
+  "refset2-refset3": {
+   "diff": -0.634,
+   "ci": [
+    -0.958,
+    -0.096
+   ],
+   "excludes_zero": true,
+   "p_bootstrap": 0.0001,
+   "holm_reject": true,
+   "holm_threshold": 0.004166666666666667
+  },
+  "refset2-refset4": {
+   "diff": -0.116,
+   "ci": [
+    -0.784,
+    -0.014
+   ],
+   "excludes_zero": true,
+   "p_bootstrap": 0.0042,
+   "holm_reject": true,
+   "holm_threshold": 0.005555555555555556
+  },
+  "refset3-refset4": {
+   "diff": 0.518,
+   "ci": [
+    0.026,
+    0.7919999999999999
+   ],
+   "excludes_zero": true,
+   "p_bootstrap": 0.0096,
+   "holm_reject": false,
+   "holm_threshold": 0.00625
+  }
+ },
+ "n_pairs": 15,
+ "n_pairs_differ": 8,
+ "n_pairs_differ_holm": 7
+}

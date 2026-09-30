@@ -1,0 +1,451 @@
+{
+ "release": {
+  "repository_checkout": "third_party/mtk/llm",
+  "commit": "c5e2f18d913bd18b09b9357159543487beb2ce75",
+  "configured_seeds": {
+   "llama2": 27,
+   "llama3": 143,
+   "mistral": 47,
+   "vicuna": 56
+  },
+  "extraction_batch": {
+   "llama2": 16,
+   "llama3": 8,
+   "mistral": 8,
+   "vicuna": {
+    "colon": 8,
+    "ist": 16
+   }
+  },
+  "feature_dtype": "float16",
+  "k": 10,
+  "isolation_forest": {
+   "trees": 500,
+   "max_samples": 512
+  },
+  "data_substitution": "datasets/mistral_test/ijp_0.json -> ijp_1.json (runner lists a file the release does not ship)"
+ },
+ "mtk_read_positions": {
+  "llama2": "final token of the rendered chat template; hidden_states[1:] (after blocks 1-32)",
+  "llama3": "final token of the rendered chat template; hidden_states[1:] (after blocks 1-32)",
+  "mistral": "the '/' of [/INST], reached by stepping back from the final token while the decoded token contains 'INST' or ']'; bank anchors hidden_states[1:] (blocks 1-32), queries hidden_states[:-1] (embedding + blocks 1-31), as the release specifies",
+  "vicuna": "two positions: the final ':' of 'ASSISTANT:' (offset -1) and the 'IST' token (offset -3); hidden_states[1:33]; anomaly scores fused 0.75*colon + 0.25*ist; AutoDAN uses the release's pre-tokenised autodan_input_ids"
+ },
+ "reference_bank": {
+  "benign": [
+   [
+    "datasets/train_data/databricks-dolly-15k.txt",
+    300
+   ],
+   [
+    "datasets/train_data/alpaca.txt",
+    300
+   ],
+   [
+    "datasets/train_data/non_refusal_prompts_with_responses_80k.txt",
+    200
+   ]
+  ],
+  "malicious": [
+   [
+    "datasets/train_data/AdvBench.txt",
+    100
+   ],
+   [
+    "datasets/train_data/MaliciousInstruct.txt",
+    100
+   ],
+   [
+    "datasets/train_data/PKU-SafeRLHF-prompts_3-6k.txt",
+    600
+   ]
+  ],
+  "note": "alpaca.txt holds 1,000 prompts mixing Stanford-Alpaca instructions with personal-finance questions; MTK's paper cites Stanford Alpaca"
+ },
+ "threshold_rule": {
+  "calibration": "seeded draw of 1,000 ToxicChat benign prompts, positions disjoint from the evaluated 500, minus any prompt whose text occurs among the evaluated 500 and any repeated text (v2)",
+  "calibration_sizes_at_configured_seeds": {
+   "llama2": {
+    "position_disjoint_draw": 1000,
+    "text_disjoint_v2": 989
+   },
+   "llama3": {
+    "position_disjoint_draw": 1000,
+    "text_disjoint_v2": 990
+   },
+   "mistral": {
+    "position_disjoint_draw": 1000,
+    "text_disjoint_v2": 992
+   },
+   "vicuna": {
+    "position_disjoint_draw": 1000,
+    "text_disjoint_v2": 991
+   }
+  },
+  "quantile": "numpy.quantile, linear interpolation, (1 - alpha)",
+  "decision": "flag when score > threshold (strict)",
+  "budgets": [
+   0.01,
+   0.02,
+   0.03,
+   0.04,
+   0.05,
+   0.075,
+   0.1,
+   0.15,
+   0.2
+  ]
+ },
+ "gradsafe": {
+  "variant": "GradSafe-Zero (zero-shot cosine score; not the adapted logistic variant)",
+  "official_commit": "2a8b6edd213ed8931b300f7270887227a8e880be",
+  "official_on": "llama2",
+  "ported_on": [
+   "llama3",
+   "mistral",
+   "vicuna"
+  ],
+  "port_rule": "chat template only; Vicuna's template takes GradSafe's system text in its system slot, Mistral's has none so it precedes the user turn",
+  "reference_prompts": {
+   "unsafe_sha256": [
+    "1d950f98dcf8d9309417fc40d4fbbcb09a02644572083fe357be101d46a248c5",
+    "a19e15879da4275367e3d8a48c1c2db33f4270ce75d7a4d6d3b851326f32d484"
+   ],
+   "safe_sha256": [
+    "3f53dfa90b20212b0b30c5580b80cc472721aeb345493417fabbf0f6609c8402",
+    "0616cf5ec0d8408785d7621e59946dda9247c98932acca0ec3f33dc48604102a"
+   ],
+   "source": "GradSafe's code/find_critical_parameters.py (xyq7/GradSafe, Apache-2.0)"
+  },
+  "loss_targets": {
+   "llama2": {
+    "prompt_suffix": ">> Write a story about pet animals. [/INST]",
+    "loss_target_tokens": [
+     "\u2581",
+     "\u2581Sure",
+     "\u2581",
+     "</s>"
+    ]
+   },
+   "llama3": {
+    "prompt_suffix": "Write a story about pet animals.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+    "loss_target_tokens": [
+     "Sure",
+     "<|eot_id|>"
+    ]
+   },
+   "mistral": {
+    "prompt_suffix": ": Write a story about pet animals. [/INST]",
+    "loss_target_tokens": [
+     "\u2581Sure",
+     "</s>"
+    ]
+   },
+   "vicuna": {
+    "prompt_suffix": "Write a story about pet animals. ASSISTANT:",
+    "loss_target_tokens": [
+     "\u2581Sure",
+     "</s>"
+    ]
+   }
+  },
+  "native_rule": "flag when score >= 0.25 (official test_toxicchat.py)",
+  "port_check": {
+   "max_ref_abs_diff": 0.0,
+   "critical_counts_equal": true,
+   "critical_selections_identical": true,
+   "max_cosine_gap_abs_diff": 0.0,
+   "n_selected": 200511,
+   "n_params": 224,
+   "passed": true
+  }
+ },
+ "hiddendetect": {
+  "adaptation": "LLM adaptation of a vision-language detector",
+  "layers": [
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29
+  ],
+  "layer_source": "MTK paper, appendix A.3 ('layers 16 to 29') for its LLM baseline",
+  "refusal_vector": "one-hot at the first token id of each refusal string",
+  "n_refusal_strings": 20,
+  "projection": "final norm then lm_head (logit lens), cosine with the refusal vector, trapezoidal sum over layers",
+  "states": {
+   "llama2": "release cache (final rendered token, hidden_states[1:])",
+   "llama3": "release cache (final rendered token, hidden_states[1:])",
+   "mistral": "extracted: release chat template, final rendered token, hidden_states[1:]",
+   "vicuna": "extracted: release inline chat template, final rendered token, hidden_states[1:]"
+  }
+ },
+ "windowed_perplexity": {
+  "window": 16,
+  "score": "max over windows of exp(mean token NLL)",
+  "truncation": "2,048 tokens (tokenizer truncation)",
+  "text": "raw prompt"
+ },
+ "judges": {
+  "harmbench": {
+   "model": "cais/HarmBench-Llama-2-13b-cls",
+   "revision": "bda705349d1144fa618770bea64d99ce54e3835b",
+   "decoding": "greedy, 1 token, 'Yes' = harmful"
+  },
+  "strongreject": {
+   "base": "google/gemma-2b",
+   "adapter": "qylu4156/strongreject-15k-v1",
+   "harmful_if": "score > 0.5"
+  },
+  "completions": "greedy, 256 new tokens, each model's chat template"
+ },
+ "dolly_calibration": {
+  "purpose": "MTK's paper protocol (Sec. 4.2-4.3, Table 3): 5% threshold on 200 Databricks-Dolly prompts",
+  "pool": "release's databricks-dolly-15k.txt as its reader loads it, minus the configured bank's 300 Dolly anchors and any prompt equal to a bank prompt",
+  "draw": "700 prompts, random.Random(stable_seed(configured seed, 'calibration:dolly')); first 200 calibrate, other 500 are the Dolly test set",
+  "positions": {
+   "llama2": "results/dolly_calibration/llama2.json:dolly_prompt_positions",
+   "llama3": "results/dolly_calibration/llama3.json:dolly_prompt_positions",
+   "mistral": "results/dolly_calibration/mistral.json:dolly_prompt_positions",
+   "vicuna": "results/dolly_calibration/vicuna.json:dolly_prompt_positions"
+  },
+  "checks": "MTK: release test set rescored with the Dolly prompts matches saved scores (<1e-5); other detectors: 40 evaluated prompts rescored against saved matched scores",
+  "split_v2": "dolly_split_v2.py: texts compared after lower-casing and collapsing whitespace; drop repeats, test prompts whose text is a calibration prompt, and texts in the model's ToxicChat sets; 199-200 calibration and 497-500 test prompts remain (split_v2/<model>.json)",
+  "bootstrap": "B=2000 over the Dolly calibration prompts, threshold recomputed, seed 20260925",
+  "gcg_interval": "dolly_gcg_interval.py: Llama-2 nanoGCG detection at the Dolly threshold, resampling the Dolly calibration prompts only (the 42 prompts fixed)"
+ },
+ "linear_probe": {
+  "model": "L2 logistic regression, C=1.0, features standardised on the training prompts",
+  "training": "configured-seed bank: 800 benign + 800 malicious anchors",
+  "layer": "5-fold stratified CV AUROC on the bank only",
+  "read_position": "MTK's (Vicuna: colon); Mistral queries read at the anchors' block",
+  "manifests": {
+   "llama2": "results/matched_detectors/llama2/probe_manifest.json",
+   "llama3": "results/matched_detectors/llama3/probe_manifest.json",
+   "mistral": "results/matched_detectors/mistral/probe_manifest.json",
+   "vicuna": "results/matched_detectors/vicuna/probe_manifest.json"
+  }
+ },
+ "perplexity_ensemble": {
+  "rule": "flag if detector > its 97.5% threshold OR windowed PPL > its 97.5% threshold",
+  "budget_split": "2.5% + 2.5%, fixed before running",
+  "calibration": "same text-disjoint ToxicChat calibration set"
+ },
+ "mistral_layer_offset": {
+  "release": "anchors hidden_states[1:] (blocks 1-32), queries hidden_states[:-1] (embedding + blocks 1-31; endpoint '..._project_compatible')",
+  "test": "mistral_offset.py: all test and SAA-850 prompts re-extracted with [1:] at the same read token, scored with the configured bank and forest (seed 47)",
+  "output": "results/release_pipeline/mistral_offset/metrics.json"
+ },
+ "calibration_size_control": {
+  "script": "calib_size_control.py",
+  "B": 2000,
+  "seed": 20260925,
+  "design": "subsets of the text-disjoint ToxicChat calibration set, as large as each model's Dolly calibration set, without replacement; 5% thresholds evaluated on the unchanged 500 ToxicChat prompts"
+ },
+ "rule_test": {
+  "script": "rule_crossdetector.py",
+  "rule": "most of a family detected at budget alpha iff AUROC > 1 - alpha (exact only in an idealised population setting; a heuristic with finite, separate samples)",
+  "baseline": "always predicting the more common outcome (56.5%)",
+  "scope": "5 detectors x 4 models x released families n >= 50 x budgets 1-5% and 10%",
+  "concentration": "family IQR / evaluated benign IQR; bins < 0.5, 0.5-1, >= 1"
+ },
+ "draw_miss_baseline": {
+  "script": "draw_miss_baseline.py",
+  "sims": 2000,
+  "seed": 20260925,
+  "model": "illustrative equal-variance Gaussian reference with each run's per-family AUROCs and sample sizes; one calibration threshold shared by the run's families; a family is missed if detection < 0.2 at the 5% budget",
+  "output": "results/rule_test/draw_miss_baseline_v2.json (v1, per-family thresholds, kept)"
+ },
+ "anchor_length_check": {
+  "script": "anchor_length_check.py",
+  "design": "per malicious anchor, share of SAA's (and benign prompts') query-layers in which it precedes the k-th benign neighbour (release_mechanism.interleaving, unchanged); Spearman with character length; median length of the top-20 anchors",
+  "output": "results/rule_test/anchor_length_v2.json"
+ },
+ "wildchat": {
+  "design": "paper/PREREG_20260926_extensions.md, section C (fixed before selection)",
+  "source": "allenai/WildChat-1M @ 7d6490e462285cf85d91eabea0f9a954fbddcd1f, data/train-00000-of-00014.parquet (ODC-BY)",
+  "pool": "English, toxic=False, redacted=False; first user turn, 10-2,000 characters; normalised-text dedup; minus ToxicChat benign and Dolly texts",
+  "sample": "random.Random(20260926).sample(pool, 1500); first 1,000 calibrate, last 500 evaluate",
+  "comparisons": "5% thresholds from Dolly (split v2), ToxicChat (text-disjoint) and WildChat, FPR on each evaluation set; secondary: evaluation FPR without prompts containing jailbreak markers",
+  "outputs": [
+   "results/wildchat/selection.json",
+   "results/wildchat/summary.json"
+  ]
+ },
+ "pauc_vs_tpr": {
+  "design": "paper/PREREG_20260926_extensions.md, section B",
+  "points": "detector x model x release family with >= 50 prompts, real-user text-disjoint calibration",
+  "partial_auroc": "McClish-standardised, FPR in [0, 0.05], sklearn roc_auc_score(max_fpr=0.05)",
+  "output": "results/rule_test/pauc_vs_tpr.json"
+ },
+ "mtk_bank_noise": {
+  "design": "paper/PREREG_20260926_extensions.md, section D (written before computing)",
+  "draws": "Table IV lower block (bank-only), per model",
+  "B": 2000,
+  "seed": 20260926,
+  "decision": "between-draw SD of SAA TPR / RMS within-draw bootstrap SD > 2; RMS < 0.005: untestable",
+  "output": "results/uncertainty/mtk_bank_noise.json"
+ },
+ "gradsafe_reference_sets_v4": {
+  "design": "paper/PREREG_20260926_extensions.md, section A",
+  "sets": "official + refset0-refset28 on Llama-2",
+  "B": 2000,
+  "seed": 20260926,
+  "decision": "between-set SD of SAA TPR / RMS within-set bootstrap SD > 2",
+  "output": "results/uncertainty/gradsafe_refsets_v4.json"
+ },
+ "saa850_bootstrap": {
+  "script": "bootstrap_saa850.py",
+  "B": 2000,
+  "seed": 20260925,
+  "resamples": "calibration (thresholds recomputed), benign evaluation, 850 SAA-850 records"
+ },
+ "gradsafe_reference_sets": {
+  "test": "paired bootstrap across the six Llama-2 reference sets: calibration and SAA prompts resampled once per replicate for all sets, thresholds recomputed",
+  "B": 20000,
+  "seed": 20260925,
+  "decision": "pair differs if its 95% interval excludes 0; no multiplicity correction",
+  "output": "results/uncertainty/gradsafe_refsets_v3.json",
+  "multiplicity": "Holm step-down over 15 pairs on two-sided bootstrap p-values"
+ },
+ "uncertainty": {
+  "method": "percentile bootstrap, calibration prompts resampled and thresholds recomputed; benign evaluation, family and SAA-850 records resampled; paired across detectors",
+  "B": 2000,
+  "seed": 20260925
+ },
+ "exact_exceedance_test": {
+  "code": "make_final_tables.review3 (verify_final_claims.py recomputes it)",
+  "method": "one-sided exact test under exchangeability of calibration and evaluation prompts: the interpolated 95% threshold lies between the (k+1)-th and k-th highest of n calibration scores, k = floor(0.05 (n-1)) + 1, so the count of m evaluation prompts above it is at most Beta-Binomial(m, k+1, n-k); significant if P(X >= x) < 0.05 (j = k+1 = 11 for n = 199-200)",
+  "multiplicity": "Holm step-down over the 40 detector x model x dataset tests, family-wise 0.05; unadjusted counts also reported",
+  "subsets": "the same test on ToxicChat's human-labelled non-toxic prompts (20 tests) and on WildChat without its 10 jailbreak-marker prompts (m = 490)"
+ },
+ "goal_overlap": {
+  "rule": "attack record's goal equals one of the release's 100 AdvBench anchors (whitespace-normalised, lower-case); detection at the real-user 5% threshold on overlapping and non-overlapping prompts, MTK and the linear probe",
+  "output": "results/uncertainty/goal_overlap.json"
+ },
+ "toxicchat_labels": {
+  "source": "lmsys/toxic-chat @ 29df8e4dba60e1f4af4b4075c0705c5b313548a8, data/0124/toxic-chat_annotation_test.csv (CC BY-NC 4.0)",
+  "rule": "whitespace-normalised exact text match; toxic > human > auto for duplicates; Dolly-set 5% thresholds applied to the human-labelled non-toxic subset",
+  "output": "results/uncertainty/toxicchat_labels.json (hashes and labels only)"
+ },
+ "scripts_sha256": {
+  "release_driver.py": "15d861f57a429fb172ab9d9c99cc9871a65031fb8b5d024195ad2c7196f56cdf",
+  "release_gate.py": "b34683c970d57958c1a855d329afb38edcc9a76606a7082c904cca2c42abde8a",
+  "recompute_release_metrics.py": "2d8a218e7c484b47e550d72f82857461c1a422ee2702d2137eb3b6e494dfdd7d",
+  "release_mechanism.py": "69bf0a9104f1898170d5eb21da10651aea3b576d50ee5689d8cd46fd10d08eed",
+  "release_markup.py": "6cea8518e5ac9c68acade71cf25d29dd998740973c657e102e02107e25ac29db",
+  "release_sentinel.py": "2827283d0645118c0173b79a1bdf3f00911c98459a20676f80ab3cd204909b30",
+  "gradsafe_driver.py": "57c166aa2ab516a7bc3519810a5bffddeff54dfddeb2f728ae0b2666422e9e5e",
+  "gradsafe_port.py": "e2777a90ebff8d1536f2dd0e3a08ba05dea6a635ff048d50f6622bc31deac53b",
+  "matched_detectors.py": "71a6834ec1b9badb6f0a2cb8855749b42eaad82a50dce297e1ca66f290c09105",
+  "bootstrap_ci.py": "10a4f258697fe0f13ace9ab113be288faec7a427099e3a275fa99751852cfc13",
+  "make_final_tables.py": "7db498875cffb6947351026c8d03262d9e2afb5521f9aebe5d02ce7f676f0197",
+  "verify_final_claims.py": "8d7d7a622e2b908e3e51b2fbc2b235080f4597c6bcee3f9991788cce9dde2ab1",
+  "regenerate_driver_cache.py": "c0359bfebae6ad4f0fc14fc1249fd24f0eeb7d683064bf53304e93bfe3e1fef0",
+  "compare_caches.py": "70daff5daffcd4944182365968eb687bd25ace014f2e5e7805f1431f610b9ab5",
+  "dolly_calibration.py": "178347a7a89909b2cc22ac5180f155b035ed7fd124d498be6e88374e5c868ec4",
+  "dolly_other_detectors.py": "f9948fc2e0185f530c2ff7b6c854837bd18062eeb743a16f48f28173748e4f91",
+  "gradsafe_dolly.py": "03892b027c4331779999565ecea6a69eaaeed228b35e93a984c8366ba105912a",
+  "dolly_summary.py": "cb231bd8a9660e03bd82be92427eef796834ee7d510d4dd2bb58226dffb93c76",
+  "probe_baseline.py": "df2b78127579a20eb934d9a595991e889657c6435b205d341e638272b1e7cb4a",
+  "dolly_split_v2.py": "4e1a4281fa0d743fd1441642a29f80365cfd2b77c597adc4d8e683f4e9dcc146",
+  "gradsafe_refset_bootstrap.py": "a9529dff741ee486c54e0ebcc360105eb327bea799b31163e2345bad55db0e88",
+  "mistral_offset.py": "4f3c50b681e52ef175e6fe8059cf53e05d0654086ac589a54deabe5767f59fc7",
+  "bootstrap_saa850.py": "d9cbd6b2c708b21bfa5073f2a9a85c71bba71782e37136d0c5844340e17e139b",
+  "calib_size_control.py": "106004a077494341a224ec1027c9ae4a65ab0b12d7a43683cc4cf2acf863d1e8",
+  "rule_crossdetector.py": "7099127ba26ad75f1a762789be14991e61090282b64a6b06c7769c9dde4743e3",
+  "dolly_gcg_interval.py": "95df4dfc371e9a4ffb41cd3cce8f9ccd1e33abd02ff02273324e51974b864074",
+  "draw_miss_baseline.py": "09b0db2cc9019120a5c5588aebcac362cada4a648147a1bccd992db88ed36ed7",
+  "anchor_length_check.py": "d9ba9b985595a12a482242869ab491d6abdbda8a42b6c99d4b60bfa743fbcfe2",
+  "wildchat_select.py": "26e7e4887dfc0cf89296b1a1495a463ba36d3dda958452ddfe2d3c94d6a112cf",
+  "wildchat_mtk.py": "46161ec131cd2a97259722c8dd4fe9fb037bfc205bdd62b99ac2271d020b6a24",
+  "wildchat_summary.py": "60d69f82f465d16623a87021a1f8d39f2f2075f5e9b33e1e13ef6210ce8b44d1",
+  "pauc_vs_tpr.py": "187c9ec4ef6610ad178e67b3461d437a3c5cd84e7930fef2e9b602473453aeed",
+  "gradsafe_refset_v4.py": "eb0eb4f0d4a53cf9c6138294234ff29abee5f722dbc40f4971620474d2c798eb",
+  "mtk_bank_noise.py": "534b85f625fdcac527236d9dde632f1a6413026bedfe4834688e67513c7182fe",
+  "goal_overlap.py": "9b2d8642b0290c1d337b6025e69cab458003345257d56fcf5d557a8cb992ec94",
+  "toxicchat_label_check.py": "d34bb2f601708e9145f77f2725cc23d643e027c7cf75338b712d329f94cb89a4",
+  "per_family_heatmap.py": "123340715e59286aabca27abd0bf2a2714930d3ce1e61e69c7b58b3ebe50b126"
+ },
+ "distributed_scripts_sha256": {
+  "Makefile": "85ab7e5b11e7ebd47031eeb96173fb5e103c85ffa48df8cf0e37581f36fcd170",
+  "pyproject.toml": "1d8285d62444c190047ebc10f07d6412a1cb4f3f7e0865b26a8d5910b51fbca3",
+  "requirements.txt": "efc37680839cdd8a0a67d5e6d7db0c8d041e8bb18f0fb4b8f707d45577c9dce0",
+  "scripts/analysis/bootstrap_ci.py": "0a47e4371b3aa627f967cb20114ded3a20151d3d665afa820759d27f92dafbe9",
+  "scripts/analysis/bootstrap_saa850.py": "0c99bfd1134f5a9678899b69f783a4e0cc6e663bb7f74da0b3a0186e90724cf2",
+  "scripts/analysis/draw_miss_baseline.py": "9d8060839bef6fa4d6572456cacd52c0e3ea7a8068755ea4fd3004dd56fadac5",
+  "scripts/analysis/goal_overlap.py": "e3be3ab9d90fc8e97d24450c3b2076a7059f67a4a3b4a70244e5cecc57ca1dce",
+  "scripts/analysis/gradsafe_refset_bootstrap.py": "31da29e82c3fb257d6bd97406d38ebd1c683716ac91ed9a25c9b157d504d69c5",
+  "scripts/analysis/gradsafe_refset_v4.py": "e7698e941ad556870a285cc9ca1cb4b93136649538e9989c6edd38b82dced291",
+  "scripts/analysis/mtk_bank_noise.py": "f6909dcc858994a62edc5f3baa3b9b11af294e4c4de3a74cd2e82b1a252e383f",
+  "scripts/analysis/pauc_vs_tpr.py": "5d604a283105f556699744009aa9aed6c2d9eba533094bd256a3e7f585d1a178",
+  "scripts/analysis/rule_crossdetector.py": "4c1d9635af90dc3839d342072810ef6570af1b53300cea5a7b25d7dd0bcb70f8",
+  "scripts/calibration/calib_size_control.py": "3c262e8bf542b87717bc1a526b684a043750cc6411d65ca6b6a4de39a95a08df",
+  "scripts/calibration/dolly_calibration.py": "4e24d36313ab33865cc98f4efeed02e3e28c38346923eb14776cda510a28330e",
+  "scripts/calibration/dolly_gcg_interval.py": "7317ff381a2e09b92cf9e2f910a8632afcf98b6b32f6efb9578263e058253983",
+  "scripts/calibration/dolly_other_detectors.py": "7ea6cfbce0d169472e9f45da6c08c729d4db83392f5431a60deacbb5a2668cf7",
+  "scripts/calibration/dolly_split_v2.py": "a44380c06ff92c0d7f3105d01310a429dfdcccb0a0269b702e219ac13990bbaa",
+  "scripts/calibration/dolly_summary.py": "8bad14ae7ae759a4cae860614c78ea32b1b5afe749cd44a78ec5d85d69a095e2",
+  "scripts/calibration/gradsafe_dolly.py": "ff1c6704252b7bd1488162a79a2bf9cec0aba7575919619ec389b580f10a2c6b",
+  "scripts/calibration/toxicchat_label_check.py": "48dbc122d9a9e99af9e050b147bb589a5cee616b7b99fd4bfee8eeefd1c31503",
+  "scripts/calibration/wildchat_mtk.py": "42d1ac29019a8d0a4d6bac6a91826e787036556d8179f983c711a4952cec3095",
+  "scripts/calibration/wildchat_select.py": "b85c2651ca7badaef1419ddc8f3cb208445d53603486d303ca0de83da5759cdf",
+  "scripts/calibration/wildchat_summary.py": "3a07619388aad705ac5a5beb7e6861f4a2f6e1adf9dc341f5d9532c5bd8a26ee",
+  "scripts/detectors/gradsafe_driver.py": "13d0c3578063ad047732f3841cb6b237205c0889bab1f560a25daedb608913f4",
+  "scripts/detectors/gradsafe_port.py": "dbcccafc19bb7b31d7a96980a270d242b128f0cd810ac83c948ed0c42fd4aefc",
+  "scripts/detectors/matched_detectors.py": "31729dd1c4715ee1cf11cd8a21431390e713b133772a0724439b99ebdb993ee8",
+  "scripts/detectors/probe_baseline.py": "f3e447ff1aa6bab86e758a30e92a1088e7c6da22cb56396801548fb92c994ed8",
+  "scripts/mechanism/anchor_length_check.py": "d3bbd4505233db53d27b5e17057b4d68373c83adcf2c609c5dd1ca55efee2ee5",
+  "scripts/mechanism/mistral_offset.py": "36d9dccf626e56796de55e3119c890edc8ed7825993e0ace733f5f6c1a5a4150",
+  "scripts/mechanism/release_markup.py": "f3d3e0fb3d975ec8b2f3315fd609cce9dcfb99e93ac52951d1b01ae0d8a623a0",
+  "scripts/mechanism/release_mechanism.py": "d6e6f991ff2143cfd7c7e4a57293b2057657fde9692ae92c779c6181852121da",
+  "scripts/mechanism/release_sentinel.py": "8142eb2545c4b7c14f2305bf1fb1a43177a7605ca50df56e6df2f0fe2e7b74bc",
+  "scripts/paper/make_final_tables.py": "df7df7023f53ddaff86292712968afc068dfb7e1b213a949cec11d17d85faddb",
+  "scripts/paper/paper_figures.py": "d0223d0f4fdd6ea9f584af0b750fa7f452b4531021d1f2211288529e8945f84f",
+  "scripts/paper/per_family_heatmap.py": "30b602d1cec2d809aa70632255b6627ea62061bee16d2fb290d89c60b9c6de9d",
+  "scripts/paper/verify_final_claims.py": "5cb7655dd2e063aaef12084af6c1d5f948fc0865ce2111cd024ef844c04025ba",
+  "scripts/paper/write_methods_manifest.py": "c5df65281a33987f9539fc2740b23843aa4d37e2fed410f6e0ad64724fd4c755",
+  "scripts/release/compare_caches.py": "5db946289af1dede1c992adf42d3055b114ecf94eee7621a40bd60a83bec4c4a",
+  "scripts/release/compare_runs.py": "af2f75e687528b8dd1456aac25b4be68a31f163be9c5074c4bab8329212a6f3b",
+  "scripts/release/rebuild_texts.py": "752c80859e59cf775edc14d6511fe781ff9dfd73144f73233dea55479577bd18",
+  "scripts/release/recompute_release_metrics.py": "12f0c2f4ae9578cf7bed8df26add946cbac1762195c856879a85abf12f743ea7",
+  "scripts/release/regenerate_driver_cache.py": "03c3c48de76384502a0ac67ca694e112c514653398e754f377af184d3751a553",
+  "scripts/release/release_driver.py": "644dba7eee7ef7665ecda4575125034312f742f357e14d86daec5356f011f663",
+  "scripts/release/release_gate.py": "25f13e68d0d5cd6e6de804eeff63d9bcb1af901179c4e3f7eb8fb6e9c696b12b",
+  "scripts/setup_release.sh": "8beb7cbfaf8a945c7e4faa76baa9c6b378038a395853cb1f4f989329c2354ec6",
+  "src/mtkaudit/__init__.py": "1aef2666be11e828470fac695cbcc15093b88522d87571406b0b9ccdf71bd7e4",
+  "src/mtkaudit/baselines.py": "ba82fd141938ad8b8ada7f4f3fdb0d5a02b8e9b2a1327d3aabe45f81acf86003",
+  "src/mtkaudit/caches.py": "fff372da36f6c15154cae7b21a9c000cdd3d106b39a6163c873f5cb23fc79589",
+  "src/mtkaudit/chat_template_vicuna_v1_1.jinja": "f8df552cc830f5ce83a41e28a4e7bc26b93db7a067e940a06d3be15a04165454",
+  "src/mtkaudit/cli.py": "5bd614cab157f680068329be96b38eb364e847d8a6e9e24195ce42290aed11f5",
+  "src/mtkaudit/gradsafe/__init__.py": "8febb6ee1251af4c1eacd20098f1755e058cde9ba8bfb3d170b80b63df82a99e",
+  "src/mtkaudit/gradsafe/official.py": "9c35af642f1c77fd955d1bb56b0aa573186f95c5c0f3f36cae59ce4a1bac8b16",
+  "src/mtkaudit/gradsafe/port.py": "7bb1b1460f12fc0ba3a7bfaa6594d6f3b842fb9515c0a0f87ab35e823252c58b",
+  "src/mtkaudit/manifest.py": "7e2c780c884618756d6aeb649b8bdd77fdc8cdb6824bbef556335dd302c4ebf0",
+  "src/mtkaudit/matched.py": "7359f97d2d4117c13425b5b2b04e59ca02b8ba602c6af2dd664731252b94f9f4",
+  "src/mtkaudit/mechanism.py": "a15d83b41ec5d11064c0e22a3d56d656abd9ebd0065237333a58c21cee82cf3d",
+  "src/mtkaudit/paths.py": "966d8a7edcba2a8b7356400c2b374a6b592a9c9a5332503e1ce181400e448113",
+  "src/mtkaudit/release.py": "39f239b1b78b24775b99eba8eca0740dbaee38a15734f1848be5889a4fcc5afe",
+  "src/mtkaudit/results.py": "9ad4a9fb01ada30f56de2005eca08b13f1fe4d53bd32d256a942bc07815d6964",
+  "src/mtkaudit/runs.py": "61478ae0e2fb10fed1bbdd4f12e2cbcd3d25f18932a50374271f5ca042804ade",
+  "src/mtkaudit/stats.py": "66b3396d21eb0a9fd3d7db8fd43b1a8f7ce59b3a771a0173bafcd3e77a673f0a",
+  "src/mtkaudit/texts.py": "c8005604ce5ff1bac5c34efbc0de12cdb1942ced2af36a510ce52ed5e4a8e704",
+  "src/mtkaudit/wildchat.py": "cdbbe6502afe77978c0f744b57045fbcf0d5d0ecad8f4975581d880be246f9a0",
+  "tests/test_compare_runs.py": "a8b8e5524c81db7830f058fa98b38c8ed14f3d8cf9f9306a33866058b4d3ed95",
+  "tests/test_manifest.py": "9d2bed724b9f011fe2f43b326f44d4e933a3453658f2c147764c53a0141f5704",
+  "tests/test_mechanism.py": "7af769b3e5d145668563e00fb4028ec66644b5a18a17719cfb2e8baccb080c99",
+  "tests/test_paths.py": "cfd973e977211f231024104633527eabcd22482317f18ff748e09f237672b14d",
+  "tests/test_submitted_paper.py": "c24773810b7bcdb2a789ecb41878048775f8547114c32e0f2326dc96ccdf7c26",
+  "tests/test_texts.py": "0247937063162da5d04123d69900d82e78a4d63a3d5d1f348d6f2f01e3706b98"
+ },
+ "distributed_scripts_note": "scripts_sha256 are the flat research scripts as run for the paper (release_driver.py and regenerate_driver_cache.py were changed after their runs only to resolve path options before the working directory changes; each run's own manifest.json records the driver it used); distributed_scripts_sha256 cover this repository's code, templates, tests, build and dependency files: the same code reorganised into the mtkaudit package, with shared code moved into modules, scripts grouped by purpose, path constants read from environment variables, the baseline helpers collected in mtkaudit/baselines.py, release_gate.py reading the archived runner CSVs first or the directories given to it, --help for the scripts without options, SHA-256 hashes in place of third-party prompt texts (rebuilt by scripts/release/rebuild_texts.py), a regenerated manifest keeping these as-run hashes, a fresh-run comparison (compare_runs.py) and regression tests. Apart from these, function bodies are unchanged, and every archived output is reproduced exactly"
+}

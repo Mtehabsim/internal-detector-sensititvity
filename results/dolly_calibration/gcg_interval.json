@@ -1,0 +1,19 @@
+{
+ "family": "nanogcg",
+ "model": "llama2",
+ "n": 42,
+ "B": 2000,
+ "seed": 20260925,
+ "resamples": "Dolly calibration prompts only (threshold uncertainty); the family's prompts are fixed",
+ "archived_first200_interval_reproduced": [
+  0.8809523809523809,
+  0.9285714285714286
+ ],
+ "n_calibration": 199,
+ "detected": 39,
+ "tpr": 0.9285714285714286,
+ "interval": [
+  0.8809523809523809,
+  0.9285714285714286
+ ]
+}

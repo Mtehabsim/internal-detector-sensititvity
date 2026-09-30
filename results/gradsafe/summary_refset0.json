@@ -1,0 +1,138 @@
+{
+ "reference": {
+  "unsafe_sha256": [
+   "e6f212d62067dd0d1f78a1062a17514c258c435a447470fe4218a174c270515f",
+   "2fc59aa5c401e384f2db260f48d15b3c095e402b04e8dd8ec0e528ec210a37a0"
+  ],
+  "safe_sha256": [
+   "65a1275383aba0ccb59e21ffbae6529aad35000c1c4e16212a54972b4ab8eb12",
+   "95bd2f30f2cc06b8d6e936fddd7794cccc06539b40dd14e8563abedde46feed8"
+  ]
+ },
+ "gradsafe_commit": "2a8b6edd213ed8931b300f7270887227a8e880be",
+ "code_sha256": {
+  "find_critical_parameters.py": "2e621d83e34dfd96e6fac7684a47ab0522f048b659b375399e943cb55d173207",
+  "test_toxicchat.py": "781e3bbefe371661026fc82fda85c9f516ab7d21258736fa8ebe55111ef6f898"
+ },
+ "n_critical_values": 312877,
+ "metrics": {
+  "threshold_calibrated_5": 0.015010942585983048,
+  "threshold_calibrated_10": -0.029434783302335545,
+  "native_threshold": 0.25,
+  "realised_fpr_calibrated_5": 0.048,
+  "realised_fpr_calibrated_10": 0.084,
+  "fpr_native": 0.008,
+  "families": {
+   "JailJudge": {
+    "n": 500,
+    "auroc": 0.864272,
+    "tpr_calibrated_5": 0.398,
+    "tpr_calibrated_10": 0.498,
+    "tpr_native": 0.106
+   },
+   "autodan": {
+    "n": 500,
+    "auroc": 0.990692,
+    "tpr_calibrated_5": 0.966,
+    "tpr_calibrated_10": 0.986,
+    "tpr_native": 0.786
+   },
+   "drattack": {
+    "n": 500,
+    "auroc": 0.867564,
+    "tpr_calibrated_5": 0.526,
+    "tpr_calibrated_10": 0.568,
+    "tpr_native": 0.112
+   },
+   "ijp": {
+    "n": 80,
+    "auroc": 0.9873999999999999,
+    "tpr_calibrated_5": 0.975,
+    "tpr_calibrated_10": 1.0,
+    "tpr_native": 0.55
+   },
+   "nanogcg": {
+    "n": 42,
+    "auroc": 0.948047619047619,
+    "tpr_calibrated_5": 0.7619047619047619,
+    "tpr_calibrated_10": 0.9047619047619048,
+    "tpr_native": 0.047619047619047616
+   },
+   "pair": {
+    "n": 500,
+    "auroc": 0.9762959999999999,
+    "tpr_calibrated_5": 0.884,
+    "tpr_calibrated_10": 0.952,
+    "tpr_native": 0.472
+   },
+   "pap_gpt3.5": {
+    "n": 19,
+    "auroc": 0.9698947368421053,
+    "tpr_calibrated_5": 0.9473684210526315,
+    "tpr_calibrated_10": 0.9473684210526315,
+    "tpr_native": 0.3684210526315789
+   },
+   "pap_gpt4": {
+    "n": 44,
+    "auroc": 0.9668181818181818,
+    "tpr_calibrated_5": 0.8863636363636364,
+    "tpr_calibrated_10": 0.9318181818181818,
+    "tpr_native": 0.25
+   },
+   "pap_llama2": {
+    "n": 37,
+    "auroc": 0.9392432432432433,
+    "tpr_calibrated_5": 0.5945945945945946,
+    "tpr_calibrated_10": 0.8648648648648649,
+    "tpr_native": 0.0
+   },
+   "saa": {
+    "n": 500,
+    "auroc": 0.9489,
+    "tpr_calibrated_5": 0.45,
+    "tpr_calibrated_10": 1.0,
+    "tpr_native": 0.0
+   },
+   "tap": {
+    "n": 50,
+    "auroc": 0.97992,
+    "tpr_calibrated_5": 0.94,
+    "tpr_calibrated_10": 0.96,
+    "tpr_native": 0.44
+   },
+   "zulu": {
+    "n": 500,
+    "auroc": 0.8250040000000001,
+    "tpr_calibrated_5": 0.024,
+    "tpr_calibrated_10": 0.064,
+    "tpr_native": 0.006
+   },
+   "saa850_repaired": {
+    "n": 850,
+    "auroc": 0.9518729411764706,
+    "tpr_calibrated_5": 0.5929411764705882,
+    "tpr_calibrated_10": 1.0,
+    "tpr_native": 0.0,
+    "easr_harmbench_calibrated_5": 0.27058823529411763,
+    "easr_strongreject_calibrated_5": 0.23294117647058823,
+    "easr_harmbench_calibrated_10": 0.0,
+    "easr_strongreject_calibrated_10": 0.0,
+    "easr_harmbench_native": 0.6870588235294117,
+    "easr_strongreject_native": 0.58
+   },
+   "saa850_nosuffix": {
+    "n": 850,
+    "auroc": 0.9764776470588235,
+    "tpr_calibrated_5": 0.9964705882352941,
+    "tpr_calibrated_10": 1.0,
+    "tpr_native": 0.0811764705882353
+   }
+  },
+  "mean_auroc_release_families": 0.9386709817459291,
+  "pmp": {
+   "n": 500,
+   "fpr_calibrated_5": 0.082,
+   "fpr_native": 0.002
+  }
+ }
+}

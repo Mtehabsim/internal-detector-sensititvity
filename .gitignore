@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+.ipynb_checkpoints/
+third_party/
+scratch/
+models/
+rerun/
+paper/latex/*.aux
+paper/latex/*.log
+paper/latex/*.out
+paper/latex/*.pdf
+# third-party texts, rebuilt locally by scripts/release/rebuild_texts.py and never published
+results/saa_multibehaviour/*_prompts.json
+restored_texts/
+data_cache/
+results/wildchat/wildchat_prompts.json
+
+# the paper source and the generator outputs that feed it stay local (make tables writes them)
+paper/

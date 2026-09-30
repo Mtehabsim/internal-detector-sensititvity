@@ -1,0 +1,310 @@
+{
+ "tolerance": {
+  "llama2": 1e-06,
+  "llama3": 1e-06,
+  "mistral": 1e-06,
+  "vicuna": 5e-05
+ },
+ "models": {
+  "llama2": {
+   "seed": 27,
+   "status": "PASS",
+   "max_abs_score_diff": 0.0,
+   "max_abs_auroc_diff": 0.0,
+   "official_mean_auroc": 0.9350928493869811,
+   "per_dataset": {
+    "toxic-chat_benign": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "JailJudge": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "autodan": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "drattack": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "ijp": {
+     "n": 80,
+     "max_abs_score_diff": 0.0
+    },
+    "nanogcg": {
+     "n": 42,
+     "max_abs_score_diff": 0.0
+    },
+    "pair": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "pap_gpt3.5": {
+     "n": 19,
+     "max_abs_score_diff": 0.0
+    },
+    "pap_gpt4": {
+     "n": 44,
+     "max_abs_score_diff": 0.0
+    },
+    "pap_llama2": {
+     "n": 37,
+     "max_abs_score_diff": 0.0
+    },
+    "saa": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "tap": {
+     "n": 50,
+     "max_abs_score_diff": 0.0
+    },
+    "zulu": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    }
+   },
+   "auroc_diff": {
+    "JailJudge": 0.0,
+    "autodan": 0.0,
+    "drattack": 0.0,
+    "ijp": 0.0,
+    "nanogcg": 0.0,
+    "pair": 0.0,
+    "pap_gpt3.5": 0.0,
+    "pap_gpt4": 0.0,
+    "pap_llama2": 0.0,
+    "saa": 0.0,
+    "tap": 0.0,
+    "zulu": 0.0
+   }
+  },
+  "llama3": {
+   "seed": 143,
+   "status": "PASS",
+   "max_abs_score_diff": 5.960464477539063e-08,
+   "max_abs_auroc_diff": 0.0,
+   "official_mean_auroc": 0.9624652473274712,
+   "per_dataset": {
+    "toxic-chat_benign": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "JailJudge": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "autodan": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "drattack": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "ijp": {
+     "n": 80,
+     "max_abs_score_diff": 0.0
+    },
+    "nanogcg": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "pair": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "pap_gpt3.5": {
+     "n": 19,
+     "max_abs_score_diff": 0.0
+    },
+    "pap_gpt4": {
+     "n": 44,
+     "max_abs_score_diff": 0.0
+    },
+    "pap_llama2": {
+     "n": 37,
+     "max_abs_score_diff": 0.0
+    },
+    "saa": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "tap": {
+     "n": 50,
+     "max_abs_score_diff": 0.0
+    },
+    "zulu": {
+     "n": 500,
+     "max_abs_score_diff": 5.960464477539063e-08
+    }
+   },
+   "auroc_diff": {
+    "JailJudge": 0.0,
+    "autodan": 0.0,
+    "drattack": 0.0,
+    "ijp": 0.0,
+    "nanogcg": 0.0,
+    "pair": 0.0,
+    "pap_gpt3.5": 0.0,
+    "pap_gpt4": 0.0,
+    "pap_llama2": 0.0,
+    "saa": 0.0,
+    "tap": 0.0,
+    "zulu": 0.0
+   }
+  },
+  "mistral": {
+   "seed": 47,
+   "status": "PASS",
+   "max_abs_score_diff": 0.0,
+   "max_abs_auroc_diff": 0.0,
+   "official_mean_auroc": 0.9431862298267166,
+   "per_dataset": {
+    "toxic-chat_benign": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "JailJudge_all": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "autodan": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "drattack": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "ijp": {
+     "n": 80,
+     "max_abs_score_diff": 0.0
+    },
+    "nonagcg": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "pair": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "pap_gpt3.5": {
+     "n": 19,
+     "max_abs_score_diff": 0.0
+    },
+    "pap_gpt4": {
+     "n": 44,
+     "max_abs_score_diff": 0.0
+    },
+    "pap_llama2": {
+     "n": 37,
+     "max_abs_score_diff": 0.0
+    },
+    "saa": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    },
+    "tap": {
+     "n": 50,
+     "max_abs_score_diff": 0.0
+    },
+    "zulu": {
+     "n": 500,
+     "max_abs_score_diff": 0.0
+    }
+   },
+   "auroc_diff": {
+    "JailJudge_all": 0.0,
+    "autodan": 0.0,
+    "drattack": 0.0,
+    "ijp": 0.0,
+    "nonagcg": 0.0,
+    "pair": 0.0,
+    "pap_gpt3.5": 0.0,
+    "pap_gpt4": 0.0,
+    "pap_llama2": 0.0,
+    "saa": 0.0,
+    "tap": 0.0,
+    "zulu": 0.0
+   }
+  },
+  "vicuna": {
+   "seed": 56,
+   "status": "PASS",
+   "max_abs_score_diff": 7.438659660463642e-09,
+   "max_abs_auroc_diff": 0.0,
+   "official_mean_auroc": 0.9117576250700461,
+   "per_dataset": {
+    "JailJudge_all": {
+     "n": 500,
+     "max_abs_score_diff": 7.4148178152988464e-09
+    },
+    "autodan": {
+     "n": 500,
+     "max_abs_score_diff": 7.438659660463642e-09
+    },
+    "drattack": {
+     "n": 500,
+     "max_abs_score_diff": 7.438659660463642e-09
+    },
+    "ijp": {
+     "n": 80,
+     "max_abs_score_diff": 7.390975942378475e-09
+    },
+    "nonagcg": {
+     "n": 500,
+     "max_abs_score_diff": 7.438659660463642e-09
+    },
+    "pair": {
+     "n": 500,
+     "max_abs_score_diff": 7.438659660463642e-09
+    },
+    "pap_gpt3.5": {
+     "n": 19,
+     "max_abs_score_diff": 6.294250481930774e-09
+    },
+    "pap_gpt4": {
+     "n": 44,
+     "max_abs_score_diff": 7.3194503791285115e-09
+    },
+    "pap_llama2": {
+     "n": 37,
+     "max_abs_score_diff": 6.270408636765978e-09
+    },
+    "saa": {
+     "n": 500,
+     "max_abs_score_diff": 7.438659660463642e-09
+    },
+    "tap": {
+     "n": 50,
+     "max_abs_score_diff": 7.271766661043344e-09
+    },
+    "toxic-chat_benign": {
+     "n": 500,
+     "max_abs_score_diff": 7.367134097213679e-09
+    },
+    "zulu": {
+     "n": 500,
+     "max_abs_score_diff": 7.438659660463642e-09
+    }
+   },
+   "auroc_diff": {
+    "JailJudge_all": 0.0,
+    "autodan": 0.0,
+    "drattack": 0.0,
+    "ijp": 0.0,
+    "nonagcg": 0.0,
+    "pair": 0.0,
+    "pap_gpt3.5": 0.0,
+    "pap_gpt4": 0.0,
+    "pap_llama2": 0.0,
+    "saa": 0.0,
+    "tap": 0.0,
+    "zulu": 0.0
+   }
+  }
+ }
+}

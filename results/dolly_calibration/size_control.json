@@ -1,0 +1,330 @@
+{
+ "B": 2000,
+ "seed": 20260925,
+ "models": {
+  "llama2": {
+   "n_subsample": 199,
+   "n_toxicchat_calibration": 989,
+   "detectors": {
+    "MTK": {
+     "fpr_toxicchat_eval": [
+      0.03,
+      0.058,
+      0.084
+     ],
+     "mean_detection": [
+      0.4039342910921859,
+      0.5922358232292442,
+      0.8030475145685672
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.236,
+     "dolly_threshold_mean_detection": 0.964672619047619,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    },
+    "Probe": {
+     "fpr_toxicchat_eval": [
+      0.032,
+      0.04,
+      0.074
+     ],
+     "mean_detection": [
+      0.6230533276783277,
+      0.7097327766077767,
+      0.7614018242268241
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.198,
+     "dolly_threshold_mean_detection": 0.954388888888889,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    },
+    "GradSafe": {
+     "fpr_toxicchat_eval": [
+      0.03,
+      0.046,
+      0.09
+     ],
+     "mean_detection": [
+      0.4911120706403601,
+      0.7024287487248012,
+      0.7880226432686959
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.078,
+     "dolly_threshold_mean_detection": 0.7745415514626042,
+     "share_subsamples_fpr_at_least_dolly": 0.0475
+    },
+    "HiddenDetect": {
+     "fpr_toxicchat_eval": [
+      0.032,
+      0.044,
+      0.086
+     ],
+     "mean_detection": [
+      0.3271062697437698,
+      0.4991247267431478,
+      0.6317220767418136
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.078,
+     "dolly_threshold_mean_detection": 0.6199698244895612,
+     "share_subsamples_fpr_at_least_dolly": 0.0545
+    },
+    "Windowed PPL": {
+     "fpr_toxicchat_eval": [
+      0.022,
+      0.06,
+      0.118
+     ],
+     "mean_detection": [
+      0.2060833333333333,
+      0.2544166666666667,
+      0.30412500000000003
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.162,
+     "dolly_threshold_mean_detection": 0.34296929824561406,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    }
+   }
+  },
+  "llama3": {
+   "n_subsample": 200,
+   "n_toxicchat_calibration": 990,
+   "detectors": {
+    "MTK": {
+     "fpr_toxicchat_eval": [
+      0.018,
+      0.032,
+      0.064
+     ],
+     "mean_detection": [
+      0.5505534451916031,
+      0.7420323882494936,
+      0.7902299721970776
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.116,
+     "dolly_threshold_mean_detection": 0.9331899758610285,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    },
+    "Probe": {
+     "fpr_toxicchat_eval": [
+      0.02,
+      0.034,
+      0.054
+     ],
+     "mean_detection": [
+      0.6180325105608,
+      0.6949084227768437,
+      0.7653124876072244
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.124,
+     "dolly_threshold_mean_detection": 0.8799697993447994,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    },
+    "GradSafe": {
+     "fpr_toxicchat_eval": [
+      0.008,
+      0.018,
+      0.034
+     ],
+     "mean_detection": [
+      0.4765522274667011,
+      0.6502107364541574,
+      0.7117803515237725
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.11,
+     "dolly_threshold_mean_detection": 0.8556101125048491,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    },
+    "HiddenDetect": {
+     "fpr_toxicchat_eval": [
+      0.026,
+      0.04,
+      0.07
+     ],
+     "mean_detection": [
+      0.03768028255528256,
+      0.08872984288115866,
+      0.15142786865813182
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.068,
+     "dolly_threshold_mean_detection": 0.13082260550023708,
+     "share_subsamples_fpr_at_least_dolly": 0.0855
+    },
+    "Windowed PPL": {
+     "fpr_toxicchat_eval": [
+      0.024,
+      0.048,
+      0.094
+     ],
+     "mean_detection": [
+      0.20054166666666665,
+      0.23683333333333334,
+      0.27030263157894735
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.122,
+     "dolly_threshold_mean_detection": 0.28630263157894736,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    }
+   }
+  },
+  "mistral": {
+   "n_subsample": 200,
+   "n_toxicchat_calibration": 992,
+   "detectors": {
+    "MTK": {
+     "fpr_toxicchat_eval": [
+      0.036,
+      0.05,
+      0.072
+     ],
+     "mean_detection": [
+      0.5397709491788439,
+      0.6100962056554162,
+      0.7570217196861934
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.272,
+     "dolly_threshold_mean_detection": 0.967502457002457,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    },
+    "Probe": {
+     "fpr_toxicchat_eval": [
+      0.018,
+      0.028,
+      0.052
+     ],
+     "mean_detection": [
+      0.4222127570153886,
+      0.509768777749041,
+      0.6250238372343636
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.166,
+     "dolly_threshold_mean_detection": 0.7651530992715202,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    },
+    "GradSafe": {
+     "fpr_toxicchat_eval": [
+      0.024,
+      0.05,
+      0.084
+     ],
+     "mean_detection": [
+      0.26959429824561404,
+      0.35129884370015946,
+      0.4435408686796844
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.304,
+     "dolly_threshold_mean_detection": 0.7535180395706712,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    },
+    "HiddenDetect": {
+     "fpr_toxicchat_eval": [
+      0.042,
+      0.072,
+      0.106
+     ],
+     "mean_detection": [
+      0.05554166666666668,
+      0.09397727272727274,
+      0.14982954545454544
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.026,
+     "dolly_threshold_mean_detection": 0.037208333333333336,
+     "share_subsamples_fpr_at_least_dolly": 0.9975
+    },
+    "Windowed PPL": {
+     "fpr_toxicchat_eval": [
+      0.03,
+      0.052,
+      0.09404999999999973
+     ],
+     "mean_detection": [
+      0.17623750000000002,
+      0.21354166666666666,
+      0.2747166666666666
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.138,
+     "dolly_threshold_mean_detection": 0.35674999999999996,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    }
+   }
+  },
+  "vicuna": {
+   "n_subsample": 199,
+   "n_toxicchat_calibration": 991,
+   "detectors": {
+    "MTK": {
+     "fpr_toxicchat_eval": [
+      0.028,
+      0.044,
+      0.072
+     ],
+     "mean_detection": [
+      0.5120015302383724,
+      0.5630715655847235,
+      0.6334839227983963
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.252,
+     "dolly_threshold_mean_detection": 0.9092282533729902,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    },
+    "Probe": {
+     "fpr_toxicchat_eval": [
+      0.036,
+      0.06,
+      0.092
+     ],
+     "mean_detection": [
+      0.3246836717099875,
+      0.406332772964352,
+      0.5351159441139703
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.164,
+     "dolly_threshold_mean_detection": 0.76499038212854,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    },
+    "GradSafe": {
+     "fpr_toxicchat_eval": [
+      0.034,
+      0.066,
+      0.104
+     ],
+     "mean_detection": [
+      0.33069238329238326,
+      0.4189495398508556,
+      0.5233813375576531
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.26,
+     "dolly_threshold_mean_detection": 0.7441137117979224,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    },
+    "HiddenDetect": {
+     "fpr_toxicchat_eval": [
+      0.02,
+      0.038,
+      0.072
+     ],
+     "mean_detection": [
+      0.4190948128152075,
+      0.5375310142678563,
+      0.7077164581447476
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.098,
+     "dolly_threshold_mean_detection": 0.7719262252683304,
+     "share_subsamples_fpr_at_least_dolly": 0.004
+    },
+    "Windowed PPL": {
+     "fpr_toxicchat_eval": [
+      0.03,
+      0.062,
+      0.084
+     ],
+     "mean_detection": [
+      0.10058333333333334,
+      0.127375,
+      0.14579166666666668
+     ],
+     "dolly_threshold_fpr_toxicchat_eval": 0.174,
+     "dolly_threshold_mean_detection": 0.22629166666666667,
+     "share_subsamples_fpr_at_least_dolly": 0.0
+    }
+   }
+  }
+ }
+}
